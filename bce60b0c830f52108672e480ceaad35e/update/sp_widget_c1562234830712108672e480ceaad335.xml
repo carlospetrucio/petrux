@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+	 c.friendsList = c.data.friendsList; 
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* Estilo geral do card */
+.card {
+    background-color: #fff;
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease; /* Transição suave */
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens no card */
+    padding: 1rem;
+    /* Garantir que os cards tenham a mesma altura */
+    height: 100%;
+    width: 100%
+}
+
+/* Efeito de zoom ao passar o mouse */
+.card:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho do card */
+}
+
+/* Estilos para a imagem ou inicial */
+.card-img-top,
+.user-photo {
+    width: 60px; /* Tamanho fixo para a imagem ou o círculo */
+    height: 60px; /* Tamanho fixo para a imagem ou o círculo */
+    border-radius: 50%; /* Torna a imagem ou o círculo redondos */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    margin-bottom: 10px;
+}
+
+/* Círculo com a inicial */
+.user-photo {
+    background-color: #FF8C00; /* Cor de fundo laranja */
+    color: white; /* Cor do texto (inicial) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px; /* Tamanho da inicial */
+}
+
+/* Estilo para o título do card */
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+/* Estilo para o corpo do card */
+.card-body {
+    text-align: center; /* Centraliza o conteúdo */
+    padding: 0;
+    flex-grow: 1; /* Faz com que o conteúdo do card ocupe o espaço restante */
+}
+
+/* Ajuste para o layout de cards dentro da linha */
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards se movam para a próxima linha */
+    justify-content: space-between; /* Espalha os cards uniformemente */
+}
+
+/* Coluna dos cards */
+.col-6,
+.col-sm-6,
+.col-md-6 {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center; /* Centraliza os cards dentro da coluna */
+}
+
+/* Estilo do card de amigo */
+.friend-card {
+  	border: .1rem solid #fc8a3d;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Garante que o conteúdo seja exibido na coluna */
+    height: 100%; /* Garante que todos os cards tenham a mesma altura */
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>petrux_coworkers</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>petrux_coworkers</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    var userId = gs.getUserID();
+    var friendsList = [];
+
+    // Buscar amigos com estado 'Accepted' e onde o usuário está na coluna 'user' ou 'friend'
+    var friendsGr = new GlideRecord('x_558714_petrux_friends');
+    friendsGr.addQuery('state', 'Accepted');  // Apenas amizades com status 'Aceito'
+    friendsGr.addEncodedQuery('state=Accepted^user=' + userId + '^ORfriend=' + userId);  // Verifica se sou o usuário ou amigo
+    friendsGr.query();
+
+    while (friendsGr.next()) {
+        var friendId = (friendsGr.user == userId) ? friendsGr.friend : friendsGr.user;
+        var friend = new GlideRecord('sys_user');
+        if (friend.get(friendId)) {
+            var friendName = friend.getDisplayValue('name');
+            var friendPhoto = friend.avatar.toString();
+					  var friendProfileId = friend.sys_id.toString();
+            friendsList.push({
+                sys_id: friendProfileId,
+                name: friendName,
+                user_photo: friendPhoto
+            });
+        }
+    }
+
+    // Retorna a lista de amigos para o widget
+    data.friendsList = friendsList;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-09 23:49:20</sys_created_on>
+        <sys_id>c1562234830712108672e480ceaad335</sys_id>
+        <sys_mod_count>61</sys_mod_count>
+        <sys_name>petrux_coworkers</sys_name>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_update_name>sp_widget_c1562234830712108672e480ceaad335</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-13 00:41:58</sys_updated_on>
+        <template><![CDATA[<div ng-if="c.friendsList.length > 0">
+    <h5>Meus Amigos</h5>
+    <div class="card p-3">
+        <div class="row">
+          
+            <div class="col-6 col-sm-6 col-md-6" ng-repeat="friend in c.friendsList">
+              <a href='?id=profile&userId={{friend.sys_id}}'>
+       
+                <!-- Card do Amigo -->
+                <div class="card mb-4 friend-card">
+                    <!-- Verifica se há foto do usuário, se não exibe um círculo laranja -->
+                    <div class="user-photo" ng-if="!friend.user_photo">
+                        <span class="user-initials">{{friend.name.charAt(0)}}</span> <!-- Exibe a inicial do nome -->
+                    </div>
+                    <img class="card-img-top user-photo-img" ng-src="{{friend.user_photo}}.iix" alt="Foto de {{friend.name}}" ng-if="friend.user_photo">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{friend.name}}</h5>
+                    </div>
+                </div></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-if="c.friendsList.length === 0">
+    <p>Você não tem amigos.</p>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

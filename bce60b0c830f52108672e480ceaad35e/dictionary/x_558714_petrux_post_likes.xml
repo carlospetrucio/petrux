@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="06468664838fd2108672e480ceaad3d4" label="Post Likes" max_length="40" name="x_558714_petrux_post_likes" type="collection">
+        <element label="Post" max_length="32" name="post" reference="x_558714_petrux_social_posts" type="reference"/>
+        <element label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
+        <element label="Liked At" max_length="40" name="liked_at" type="glide_date_time"/>
+        <index name="index">
+            <element name="post"/>
+        </index>
+        <index name="index2">
+            <element name="user"/>
+        </index>
+    </element>
+</database>

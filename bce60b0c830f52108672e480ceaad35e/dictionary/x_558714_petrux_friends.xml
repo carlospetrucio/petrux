@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="b181caf4834312108672e480ceaad39c" label="Friends" max_length="40" name="x_558714_petrux_friends" text_index="true" type="collection">
+        <element choice="1" label="State" max_length="100" name="state" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Rejected" value="Rejected"/>
+                <element inactive_on_update="false" label="Accepted" sequence="2" value="Accepted"/>
+                <element inactive_on_update="false" label="Requested" sequence="1" value="Requested"/>
+            </choice>
+        </element>
+        <element label="Friend" max_length="32" name="friend" reference="sys_user" type="reference"/>
+        <element label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="friend"/>
+        </index>
+        <index name="index2">
+            <element name="user"/>
+        </index>
+    </element>
+</database>

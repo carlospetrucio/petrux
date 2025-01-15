@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">0f2fbdb5834312108672e480ceaad30d</sp_column>
+        <sp_widget display_value="petrux_footer">140935fd830312108672e480ceaad36f</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-12 23:32:17</sys_created_on>
+        <sys_id>1c3fbdb5834312108672e480ceaad371</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_update_name>sp_instance_1c3fbdb5834312108672e480ceaad371</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-12 23:32:17</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=1c3fbdb5834312108672e480ceaad371"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="PetruX">bce60b0c830f52108672e480ceaad35e</application>
+        <file_path/>
+        <instance_id>98fcf2caeb429a18cbdefceacad0cd4b</instance_id>
+        <instance_name>dev291428</instance_name>
+        <name>sp_instance_1c3fbdb5834312108672e480ceaad371</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>1</order><roles/><short_description/><size>md</size><sp_column display_value="1">0f2fbdb5834312108672e480ceaad30d</sp_column><sp_widget display_value="petrux_footer">140935fd830312108672e480ceaad36f</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-01-12 23:32:17</sys_created_on><sys_id>1c3fbdb5834312108672e480ceaad371</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package><sys_policy/><sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope><sys_update_name>sp_instance_1c3fbdb5834312108672e480ceaad371</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-01-12 23:32:17</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=1c3fbdb5834312108672e480ceaad371"/></record_update>]]></payload>
+        <payload_hash>1865763531</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>7ce60b0c830f52108672e480ceaad362</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-12 23:32:17</sys_created_on>
+        <sys_id>d03fbdb5834312108672e480ceaad374</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1945cdc6c410000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-12 23:32:17</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>d43fbdb5e8431210d388a58e6484d273</update_guid>
+        <update_guid_history>d43fbdb5e8431210d388a58e6484d273:1865763531</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">8abf7db5834312108672e480ceaad39d</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-12 23:34:35</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>16b6a0826ade4e0d89fbb376b5f06241</sys_id>
+        <sys_metadata>1c3fbdb5834312108672e480ceaad371</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_scope_delete display_value="">38ed18ac66cb43c0ad4828f5fc6ba490</sys_scope_delete>
+        <sys_update_name>sp_instance_1c3fbdb5834312108672e480ceaad371</sys_update_name>
+        <sys_update_version display_value="sp_instance_1c3fbdb5834312108672e480ceaad371">d03fbdb5834312108672e480ceaad374</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-12 23:34:35</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

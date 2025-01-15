@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_dependency_css_include">
+    <m2m_sp_dependency_css_include action="DELETE">
+        <order>100</order>
+        <sp_css_include display_value="main.css">7f8b5d14830b92108672e480ceaad313</sp_css_include>
+        <sp_dependency display_value="CSS">327b9914830b92108672e480ceaad393</sp_dependency>
+        <sys_class_name>m2m_sp_dependency_css_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-08 05:06:13</sys_created_on>
+        <sys_id>9fab5d14830b92108672e480ceaad3f6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>main.css.CSS</sys_name>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_update_name>m2m_sp_dependency_css_include_9fab5d14830b92108672e480ceaad3f6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-08 05:06:13</sys_updated_on>
+    </m2m_sp_dependency_css_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="PetruX">bce60b0c830f52108672e480ceaad35e</application>
+        <file_path/>
+        <instance_id>98fcf2caeb429a18cbdefceacad0cd4b</instance_id>
+        <instance_name>dev291428</instance_name>
+        <name>m2m_sp_dependency_css_include_9fab5d14830b92108672e480ceaad3f6</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_dependency_css_include"><m2m_sp_dependency_css_include action="INSERT_OR_UPDATE"><order>100</order><sp_css_include display_value="main.css">7f8b5d14830b92108672e480ceaad313</sp_css_include><sp_dependency display_value="CSS">327b9914830b92108672e480ceaad393</sp_dependency><sys_class_name>m2m_sp_dependency_css_include</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-01-08 05:06:13</sys_created_on><sys_id>9fab5d14830b92108672e480ceaad3f6</sys_id><sys_mod_count>0</sys_mod_count><sys_name>main.css.CSS</sys_name><sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package><sys_policy/><sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope><sys_update_name>m2m_sp_dependency_css_include_9fab5d14830b92108672e480ceaad3f6</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-01-08 05:06:13</sys_updated_on></m2m_sp_dependency_css_include></record_update>]]></payload>
+        <payload_hash>2065226348</payload_hash>
+        <record_name>main.css.CSS</record_name>
+        <reverted_from/>
+        <source>7ce60b0c830f52108672e480ceaad362</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-08 05:06:13</sys_created_on>
+        <sys_id>13abdd14830b92108672e480ceaad356</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194444e5c5b0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-08 05:06:13</sys_updated_on>
+        <type>Dependency CSS Includes</type>
+        <update_guid>13ab5d14ab0b921049743a41ff358cf9</update_guid>
+        <update_guid_history>13ab5d14ab0b921049743a41ff358cf9:2065226348</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="main.css.CSS">30fcb02c830bd2108672e480ceaad3a9</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-08 21:30:28</sys_created_on>
+        <sys_db_object display_value="" name="m2m_sp_dependency_css_include">m2m_sp_dependency_css_include</sys_db_object>
+        <sys_id>2c39ca30157042d3a3fb673353765789</sys_id>
+        <sys_metadata>9fab5d14830b92108672e480ceaad3f6</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>main.css.CSS</sys_name>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_scope_delete display_value="">38ed18ac66cb43c0ad4828f5fc6ba490</sys_scope_delete>
+        <sys_update_name>m2m_sp_dependency_css_include_9fab5d14830b92108672e480ceaad3f6</sys_update_name>
+        <sys_update_version display_value="m2m_sp_dependency_css_include_9fab5d14830b92108672e480ceaad3f6">13abdd14830b92108672e480ceaad356</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-08 21:30:28</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

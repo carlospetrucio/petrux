@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-08 03:06:13</sys_created_on>
+        <sys_id>2130c590838792108672e480ceaad3bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_558714_petrux_user_covers.x_558714_petrux.user_covers_user</sys_name>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_security_acl display_value="x_558714_petrux_user_covers">a930c590838792108672e480ceaad3bb</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_2130c590838792108672e480ceaad3bf</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-08 03:06:13</sys_updated_on>
+        <sys_user_role display_value="x_558714_petrux.user_covers_user" name="x_558714_petrux.user_covers_user">0d308190838792108672e480ceaad3dc</sys_user_role>
+    </sys_security_acl_role>
+</record_update>

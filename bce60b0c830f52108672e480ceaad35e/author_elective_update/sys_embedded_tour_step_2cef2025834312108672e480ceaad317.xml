@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_embedded_tour_step">
+    <sys_embedded_tour_step action="DELETE">
+        <action>false</action>
+        <action_event>next</action_event>
+        <action_target/>
+        <action_target_ref display_value="xpath">e8ef2025834312108672e480ceaad315</action_target_ref>
+        <active>true</active>
+        <content><![CDATA[teste]]></content>
+        <guide display_value="PetruX">fa4de8e9830312108672e480ceaad3c9</guide>
+        <implicit>false</implicit>
+        <link/>
+        <name/>
+        <options>{"url":"/petrux?id=feed"}</options>
+        <order>4</order>
+        <placement>bottom</placement>
+        <skippable>false</skippable>
+        <step_type>step</step_type>
+        <sys_class_name>sys_embedded_tour_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 23:07:17</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2cef2025834312108672e480ceaad317</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_update_name>sys_embedded_tour_step_2cef2025834312108672e480ceaad317</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 23:07:17</sys_updated_on>
+        <target/>
+        <target_ref display_value="xpath">e8ef2025834312108672e480ceaad315</target_ref>
+        <title/>
+        <ui_version>dynamic</ui_version>
+        <view/>
+        <window>petrux</window>
+    </sys_embedded_tour_step>
+    <sys_translated_text action="DELETE" query="documentkey=2cef2025834312108672e480ceaad317"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="PetruX">bce60b0c830f52108672e480ceaad35e</application>
+        <file_path/>
+        <instance_id>98fcf2caeb429a18cbdefceacad0cd4b</instance_id>
+        <instance_name>dev291428</instance_name>
+        <name>sys_embedded_tour_step_2cef2025834312108672e480ceaad317</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_embedded_tour_step"&gt;&lt;sys_embedded_tour_step action="INSERT_OR_UPDATE"&gt;&lt;action&gt;false&lt;/action&gt;&lt;action_event&gt;next&lt;/action_event&gt;&lt;action_target/&gt;&lt;action_target_ref display_value="xpath"&gt;e8ef2025834312108672e480ceaad315&lt;/action_target_ref&gt;&lt;active&gt;true&lt;/active&gt;&lt;content&gt;&lt;![CDATA[teste]]&gt;&lt;/content&gt;&lt;guide display_value="PetruX"&gt;fa4de8e9830312108672e480ceaad3c9&lt;/guide&gt;&lt;implicit&gt;false&lt;/implicit&gt;&lt;link/&gt;&lt;name/&gt;&lt;options&gt;{"url":"/petrux?id=feed"}&lt;/options&gt;&lt;order&gt;4&lt;/order&gt;&lt;placement&gt;bottom&lt;/placement&gt;&lt;skippable&gt;false&lt;/skippable&gt;&lt;step_type&gt;step&lt;/step_type&gt;&lt;sys_class_name&gt;sys_embedded_tour_step&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-01-11 23:07:17&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;2cef2025834312108672e480ceaad317&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="PetruX" source="x_558714_petrux"&gt;bce60b0c830f52108672e480ceaad35e&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="PetruX"&gt;bce60b0c830f52108672e480ceaad35e&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_embedded_tour_step_2cef2025834312108672e480ceaad317&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-01-11 23:07:17&lt;/sys_updated_on&gt;&lt;target/&gt;&lt;target_ref display_value="xpath"&gt;e8ef2025834312108672e480ceaad315&lt;/target_ref&gt;&lt;title/&gt;&lt;ui_version&gt;dynamic&lt;/ui_version&gt;&lt;view/&gt;&lt;window&gt;petrux&lt;/window&gt;&lt;/sys_embedded_tour_step&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=2cef2025834312108672e480ceaad317"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1228755405</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>7ce60b0c830f52108672e480ceaad362</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 23:07:17</sys_created_on>
+        <sys_id>a8ef2025834312108672e480ceaad319</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194579f2eca0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 23:07:17</sys_updated_on>
+        <type>Guided Tour Step</type>
+        <update_guid>acef2025cb4312101e25e88cea36cd18</update_guid>
+        <update_guid_history>acef2025cb4312101e25e88cea36cd18:-1228755405</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 23:07:24</sys_created_on>
+        <sys_db_object display_value="" name="sys_embedded_tour_step">sys_embedded_tour_step</sys_db_object>
+        <sys_id>5f5a85b2c02a4eeca5171b90ccf325a1</sys_id>
+        <sys_metadata>2cef2025834312108672e480ceaad317</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_scope_delete display_value="">38ed18ac66cb43c0ad4828f5fc6ba490</sys_scope_delete>
+        <sys_update_name>sys_embedded_tour_step_2cef2025834312108672e480ceaad317</sys_update_name>
+        <sys_update_version display_value="sys_embedded_tour_step_2cef2025834312108672e480ceaad317">a8ef2025834312108672e480ceaad319</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 23:07:24</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

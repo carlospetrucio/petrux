@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script/>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>feed_posting</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>feed_posting</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	// Configuration
+	data.recordsTable = 'incident';
+	data.recordsQuery = ''; // The encoded query to filter records (empty means all records)
+	data.recordsFields = ['number', 'short_description']; // The fields to retrieve for each record
+	data.recordsPerPage = parseInt($sp.getParameter('display')) || 10;
+	data.userQuery = $sp.getParameter('query');
+
+	// Get pagination parameters
+	data.page_id = $sp.getParameter('id');
+	data.page = parseInt($sp.getParameter('page'), 10) || 1; // Current page number, default to 1
+	data.display = parseInt(data.recordsPerPage, 10) > 0 ? parseInt(data.recordsPerPage, 10) : 10; // Amount of records to display per page
+
+	// Count total records
+	var countGa = new GlideAggregate(data.recordsTable);
+	countGa.addEncodedQuery(data.recordsQuery);
+	countGa.addEncodedQuery(data.userQuery);
+	countGa.addAggregate('COUNT');
+	countGa.query();
+	if (countGa.next()) {
+		data.count = parseInt(countGa.getAggregate('COUNT'), 10);
+	}
+
+	data.pages = calculatePaginationPages(data.count, data.display, data.page);
+
+	// Adjust current page if it exceeds the total number of pages
+	if (data.pages[data.pages.length - 1] < data.page) {
+		data.page = Math.ceil(data.count / data.display);
+	}
+
+	// Calculate the starting row for the current page
+	data.rowStart = (data.page - 1) * data.display;
+	var rowEnd = data.rowStart + data.display;
+
+	// Fetch records for the current page
+	data.records = [];
+	var recordsGr = new GlideRecord(data.recordsTable);
+	recordsGr.addEncodedQuery(data.recordsQuery);
+	recordsGr.addEncodedQuery(data.userQuery);
+	recordsGr.chooseWindow(data.rowStart, rowEnd);
+	recordsGr.query();
+	while (recordsGr.next()) {
+		var record = {};
+		for (var i = 0; i < data.recordsFields.length; i++) {
+			var fieldName = data.recordsFields[i];
+			record[fieldName] = (recordsGr.getElement(fieldName) + "").trim();
+		}
+		data.records.push(record);
+	}
+
+	/**
+	 * Calculates the page numbers to display in the pagination control
+	 * @param {number} totalRecords - Total number of records
+	 * @param {number} recordsPerPage - Number of records per page
+	 * @param {number} currentPage - Current page number
+	 * @returns {Array} An array of page numbers and ellipses to display
+	 */
+	function calculatePaginationPages(totalRecords, recordsPerPage, currentPage) {
+		if (recordsPerPage <= 0) {
+			return [];
+		}
+
+		var totalPages = Math.ceil(totalRecords / recordsPerPage);
+		var pages = [];
+		var startPage, endPage;
+
+		// Determine the range of pages to display
+		if (totalPages <= 7) {
+			// If 7 or fewer pages, show all
+			startPage = 1;
+			endPage = totalPages;
+		} else {
+			// For more than 7 pages, use a sliding window
+			if (currentPage < 4) {
+				startPage = 1;
+				endPage = 5;
+			} else if (currentPage === 5) {
+				startPage = 3;
+				endPage = 7;
+			} else if (currentPage + 2 >= totalPages) {
+				startPage = totalPages - 4;
+				endPage = totalPages;
+			} else {
+				startPage = currentPage - 2;
+				endPage = currentPage + 2;
+			}
+		}
+
+		// Add first page and ellipsis if necessary
+		if (startPage > 1) {
+			pages.push(1);
+			if (startPage > 2) {
+				pages.push('...');
+			}
+		}
+
+		// Add page numbers
+		for (var i = startPage; i <= endPage; i++) {
+			pages.push(i);
+		}
+
+		// Add last page and ellipsis if necessary
+		if (endPage < totalPages) {
+			if (endPage < totalPages - 1) {
+				pages.push('...');
+			}
+			pages.push(totalPages);
+		}
+
+		return pages;
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-07 19:19:21</sys_created_on>
+        <sys_id>6e55d74c834f52108672e480ceaad336</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>feed_posting</sys_name>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_update_name>sp_widget_6e55d74c834f52108672e480ceaad336</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-08 21:47:17</sys_updated_on>
+        <template><![CDATA[<div>
+  <div class="record-list">
+    <div ng-repeat="record in data.records">
+      <span ng-repeat="field in data.recordsFields">{{record[field]}} </span>
+    </div>
+  </div>
+  <nav aria-label="Page navigation" ng-if="data.count > 0">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="?id={{data.page_id}}&page={{data.page-1}}&display={{data.display}}&query={{data.userQuery}}" aria-label="Previous" ng-if="data.page > 1">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="page-link disabled" aria-label="Previous" ng-if="data.page <= 1">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item" ng-repeat="page in data.pages track by $index" ng-class="{active: page == data.page}"><a class="page-link" href="?id={{data.page_id}}&page={{page}}&display={{data.display}}&query={{data.userQuery}}" ng-if="page != '...'">{{page}}</a><span ng-if="page == '...'">...</span></li>
+      <li class="page-item">
+        <a class="page-link" href="?id={{data.page_id}}&page={{data.page+1}}&display={{data.display}}&query={{data.userQuery}}" aria-label="Next" ng-if="data.page < data.pages[data.pages.length - 1]">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+        <a class="page-link disabled" aria-label="Next" ng-if="data.page >= data.pages[data.pages.length - 1]">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="PetruX">bce60b0c830f52108672e480ceaad35e</application>
+        <file_path/>
+        <instance_id>98fcf2caeb429a18cbdefceacad0cd4b</instance_id>
+        <instance_name>dev291428</instance_name>
+        <name>sp_widget_6e55d74c834f52108672e480ceaad336</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script/&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css/&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;feed_posting&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;feed_posting&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+	// Configuration
+	data.recordsTable = 'incident';
+	data.recordsQuery = ''; // The encoded query to filter records (empty means all records)
+	data.recordsFields = ['number', 'short_description']; // The fields to retrieve for each record
+	data.recordsPerPage = parseInt($sp.getParameter('display')) || 10;
+	data.userQuery = $sp.getParameter('query');
+
+	// Get pagination parameters
+	data.page_id = $sp.getParameter('id');
+	data.page = parseInt($sp.getParameter('page'), 10) || 1; // Current page number, default to 1
+	data.display = parseInt(data.recordsPerPage, 10) &gt; 0 ? parseInt(data.recordsPerPage, 10) : 10; // Amount of records to display per page
+
+	// Count total records
+	var countGa = new GlideAggregate(data.recordsTable);
+	countGa.addEncodedQuery(data.recordsQuery);
+	countGa.addEncodedQuery(data.userQuery);
+	countGa.addAggregate('COUNT');
+	countGa.query();
+	if (countGa.next()) {
+		data.count = parseInt(countGa.getAggregate('COUNT'), 10);
+	}
+
+	data.pages = calculatePaginationPages(data.count, data.display, data.page);
+
+	// Adjust current page if it exceeds the total number of pages
+	if (data.pages[data.pages.length - 1] &lt; data.page) {
+		data.page = Math.ceil(data.count / data.display);
+	}
+
+	// Calculate the starting row for the current page
+	data.rowStart = (data.page - 1) * data.display;
+	var rowEnd = data.rowStart + data.display;
+
+	// Fetch records for the current page
+	data.records = [];
+	var recordsGr = new GlideRecord(data.recordsTable);
+	recordsGr.addEncodedQuery(data.recordsQuery);
+	recordsGr.addEncodedQuery(data.userQuery);
+	recordsGr.chooseWindow(data.rowStart, rowEnd);
+	recordsGr.query();
+	while (recordsGr.next()) {
+		var record = {};
+		for (var i = 0; i &lt; data.recordsFields.length; i++) {
+			var fieldName = data.recordsFields[i];
+			record[fieldName] = (recordsGr.getElement(fieldName) + "").trim();
+		}
+		data.records.push(record);
+	}
+
+	/**
+	 * Calculates the page numbers to display in the pagination control
+	 * @param {number} totalRecords - Total number of records
+	 * @param {number} recordsPerPage - Number of records per page
+	 * @param {number} currentPage - Current page number
+	 * @returns {Array} An array of page numbers and ellipses to display
+	 */
+	function calculatePaginationPages(totalRecords, recordsPerPage, currentPage) {
+		if (recordsPerPage &lt;= 0) {
+			return [];
+		}
+
+		var totalPages = Math.ceil(totalRecords / recordsPerPage);
+		var pages = [];
+		var startPage, endPage;
+
+		// Determine the range of pages to display
+		if (totalPages &lt;= 7) {
+			// If 7 or fewer pages, show all
+			startPage = 1;
+			endPage = totalPages;
+		} else {
+			// For more than 7 pages, use a sliding window
+			if (currentPage &lt; 4) {
+				startPage = 1;
+				endPage = 5;
+			} else if (currentPage === 5) {
+				startPage = 3;
+				endPage = 7;
+			} else if (currentPage + 2 &gt;= totalPages) {
+				startPage = totalPages - 4;
+				endPage = totalPages;
+			} else {
+				startPage = currentPage - 2;
+				endPage = currentPage + 2;
+			}
+		}
+
+		// Add first page and ellipsis if necessary
+		if (startPage &gt; 1) {
+			pages.push(1);
+			if (startPage &gt; 2) {
+				pages.push('...');
+			}
+		}
+
+		// Add page numbers
+		for (var i = startPage; i &lt;= endPage; i++) {
+			pages.push(i);
+		}
+
+		// Add last page and ellipsis if necessary
+		if (endPage &lt; totalPages) {
+			if (endPage &lt; totalPages - 1) {
+				pages.push('...');
+			}
+			pages.push(totalPages);
+		}
+
+		return pages;
+	}
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-01-07 19:19:21&lt;/sys_created_on&gt;&lt;sys_id&gt;6e55d74c834f52108672e480ceaad336&lt;/sys_id&gt;&lt;sys_mod_count&gt;12&lt;/sys_mod_count&gt;&lt;sys_name&gt;feed_posting&lt;/sys_name&gt;&lt;sys_package display_value="PetruX" source="x_558714_petrux"&gt;bce60b0c830f52108672e480ceaad35e&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="PetruX"&gt;bce60b0c830f52108672e480ceaad35e&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_6e55d74c834f52108672e480ceaad336&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-01-08 21:47:17&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div&gt;
+  &lt;div class="record-list"&gt;
+    &lt;div ng-repeat="record in data.records"&gt;
+      &lt;span ng-repeat="field in data.recordsFields"&gt;{{record[field]}} &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;nav aria-label="Page navigation" ng-if="data.count &gt; 0"&gt;
+    &lt;ul class="pagination"&gt;
+      &lt;li class="page-item"&gt;
+        &lt;a class="page-link" href="?id={{data.page_id}}&amp;page={{data.page-1}}&amp;display={{data.display}}&amp;query={{data.userQuery}}" aria-label="Previous" ng-if="data.page &gt; 1"&gt;
+          &lt;span aria-hidden="true"&gt;&amp;laquo;&lt;/span&gt;
+          &lt;span class="sr-only"&gt;Previous&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class="page-link disabled" aria-label="Previous" ng-if="data.page &lt;= 1"&gt;
+          &lt;span aria-hidden="true"&gt;&amp;laquo;&lt;/span&gt;
+          &lt;span class="sr-only"&gt;Previous&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="page-item" ng-repeat="page in data.pages track by $index" ng-class="{active: page == data.page}"&gt;&lt;a class="page-link" href="?id={{data.page_id}}&amp;page={{page}}&amp;display={{data.display}}&amp;query={{data.userQuery}}" ng-if="page != '...'"&gt;{{page}}&lt;/a&gt;&lt;span ng-if="page == '...'"&gt;...&lt;/span&gt;&lt;/li&gt;
+      &lt;li class="page-item"&gt;
+        &lt;a class="page-link" href="?id={{data.page_id}}&amp;page={{data.page+1}}&amp;display={{data.display}}&amp;query={{data.userQuery}}" aria-label="Next" ng-if="data.page &lt; data.pages[data.pages.length - 1]"&gt;
+          &lt;span aria-hidden="true"&gt;&amp;raquo;&lt;/span&gt;
+          &lt;span class="sr-only"&gt;Next&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class="page-link disabled" aria-label="Next" ng-if="data.page &gt;= data.pages[data.pages.length - 1]"&gt;
+          &lt;span aria-hidden="true"&gt;&amp;raquo;&lt;/span&gt;
+          &lt;span class="sr-only"&gt;Next&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1934323762</payload_hash>
+        <record_name>feed_posting</record_name>
+        <reverted_from/>
+        <source>7ce60b0c830f52108672e480ceaad362</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-08 21:47:17</sys_created_on>
+        <sys_id>d3c08920834bd2108672e480ceaad36e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19447e2dd140000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-08 21:47:17</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>9bc089207f4bd210212110250ffcf36d</update_guid>
+        <update_guid_history>9bc089207f4bd210212110250ffcf36d:1934323762,7fa009203e4bd210038f310b100d5beb:575776933,c8a08920414bd210c7a9a86e45cf6d67:253410715,bc90c16c470bd2109b41afabda0a7dc7:-31707769,57804520be4bd210dcf2ae9fb9d225d2:-606081247,0680c520494bd210414ce272a6512e48:-431665364,77959b8c1d4f521029ff275a448e0fd7:1040144912,7d95d74cc74f521044b8844b11d5dd6b:1539847943,f585978cb74f52106ea290d574467df7:1040144912,b365978c4e4f5210d2be71f13807a8ce:2078776944,ea65138c254f521035297223206ec6b8:-1096075123,b065d74ce74f5210bd2b0d5e8394d160:-255660030,ee55d74c494f5210034ba08f70ce9438:1830789537</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="feed_posting">28610960834bd2108672e480ceaad3fa</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-08 21:49:50</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>036f5ad9c32a4440824544ba9fc647f1</sys_id>
+        <sys_metadata>6e55d74c834f52108672e480ceaad336</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>feed_posting</sys_name>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_scope_delete display_value="">38ed18ac66cb43c0ad4828f5fc6ba490</sys_scope_delete>
+        <sys_update_name>sp_widget_6e55d74c834f52108672e480ceaad336</sys_update_name>
+        <sys_update_version display_value="sp_widget_6e55d74c834f52108672e480ceaad336">d3c08920834bd2108672e480ceaad36e</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-08 21:49:50</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

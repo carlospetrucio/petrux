@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {
+    /* widget controller */
+    var c = this;
+
+    // Função para verificar se a mensagem não está vazia
+    c.isMessageValid = function() {
+        return c.data.message && c.data.message.trim() !== ""; // Retorna true se a mensagem não for vazia
+    };
+
+    // Função para habilitar/desabilitar o botão com base na validade da mensagem
+    c.getButtonState = function() {
+        return c.isMessageValid(); // Habilita o botão se a mensagem for válida
+    };
+
+    c.add = function() {
+        // Verifica se a mensagem não está vazia antes de permitir a postagem
+        if (!c.isMessageValid()) {
+            return;  // Impede a execução se a mensagem estiver vazia
+        }
+
+        c.data.action = "addMessage";  // Define a ação como adicionar mensagem
+        c.server.update().then(function() {
+            c.data.action = undefined;
+            c.data.message = "";  // Limpa o campo de mensagem após o envio
+            window.location.reload();  // Recarrega a página para exibir as postagens atualizadas
+        });
+    };
+
+    c.remove = function(i) {
+        c.data.i = i;
+        c.data.action = "removeMessage";  // Define a ação como remover mensagem
+        c.server.update().then(function() {
+            c.data.action = undefined;
+        });
+    };
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.post-card {
+  	border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .post-card .card-header {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+  }
+  .post-card .card-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+  .post-card .card-body {
+    padding: 10px;
+  }
+  .post-card .form-control {
+    resize: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .post-card .btn {
+    background-color: $primary;
+    border-color: $primary;
+  }
+  .post-card .btn:hover {
+    background-color: $primary;
+    border-color: $primary;
+  }</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>petrux_new_post</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Petrux New Post</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+ 
+ data.messages = [];
+ 
+ if (input) {
+ 
+     data.messages = input.messages;
+     var user = gs.getUserID();  // Obtém o ID do usuário logado
+ 
+     // Verificação para garantir que a mensagem não seja vazia
+     if (input.action == "addMessage") {
+         if (input.message && input.message.trim() !== "") {
+             // Criação do post
+             data.messages.push(input.message);
+             
+             // Criação do incidente
+             var incident = new GlideRecord('x_558714_petrux_social_posts');
+             incident.initialize();  // Inicializa o registro do incidente
+             incident.content = input.message;  // Define o conteúdo do post
+             incident.user = user;
+             incident.insert();  // Insere o post no banco de dados
+         } else {
+             // Se a mensagem estiver vazia, não cria o post e envia uma mensagem de erro
+             data.error = "A mensagem não pode ser vazia!";
+         }
+     }
+ 
+     if (input.action == "removeMessage") {
+         data.messages.splice(input.i, 1);
+     }
+ 
+ } 
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-07 19:20:52</sys_created_on>
+        <sys_id>34b5978c834f52108672e480ceaad3fb</sys_id>
+        <sys_mod_count>163</sys_mod_count>
+        <sys_name>Petrux New Post</sys_name>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_update_name>sp_widget_34b5978c834f52108672e480ceaad3fb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-09 01:44:29</sys_updated_on>
+        <template><![CDATA[
+
+<div class="card post-card">
+  <div class="card-body">
+    <textarea class="form-control" ng-model="c.data.message" placeholder="O que você quer reportar?" rows="4"></textarea>
+    <br><button class="btn btn-primary btn-block mt-3" ng-disabled="!c.getButtonState()" ng-click="c.add()">Postar</button>
+  </div>
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>34b5978c834f52108672e480ceaad3fb</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-08 21:45:15</sys_created_on>
+        <sys_id>a9508120834bd2108672e480ceaad3cd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-08 21:45:15</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

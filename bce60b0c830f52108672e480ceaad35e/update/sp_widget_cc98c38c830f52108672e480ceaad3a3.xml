@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function() {
+  /* Widget Controller */
+  var c = this;
+
+  // Inicializa as informações do usuário
+  c.data.userDetails = {};
+
+  // Recupera informações do usuário logado
+  c.server.get().then(function(response) {
+    c.data.userDetails.name = response.firstName; // Nome do usuário logado
+    c.data.userDetails.email = response.email; // E-mail do usuário
+    c.data.userDetails.location = response.location || 'Location not available'; // Localização
+    c.data.userDetails.avatar = response.avatar || 'x_558714_petrux.cover_default.png'; // Avatar padrão
+  });
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>  .counters {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: $primary;
+    border-top: 1px solid #ccc;
+  }
+
+  .counter {
+    text-align: center;
+  }
+
+  .counter .icon {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: #fff;
+  }
+
+  .counter .count {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+.count{
+  color: #fff;
+}
+  .counter .label {
+    font-size: 0.9rem;
+    color: #fff;
+  }
+
+.cover {
+    background-image: url(https://images.unsplash.com/photo-1530305408560-82d13781b33a?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1352&amp;q=80);
+    background-size: cover;
+    background-repeat: no-repeat
+}
+.cover img{
+  height: 100px; /* Altura da imagem de fundo */
+  width : 100%;
+}
+
+
+.user-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden; /* Garante que nada saia dos limites do card */
+  background-color: #fff; /* Fundo de segurança caso a imagem não carregue */
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px; /* Altura da imagem de fundo */
+  background-image: url('{{data.coverImage}}');
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Mantém o fundo atrás de outros elementos */
+}
+
+.profile-image {
+  position: relative;
+  z-index: 1; /* Garante que fique acima do fundo */
+  margin-top: -5rem; /* Ajusta a posição vertical para sobrepor a imagem de fundo */
+}
+
+.profile-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Torna a imagem circular */
+  object-fit: cover;
+  border: 3px solid white; /* Borda branca ao redor da imagem */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Dá um leve destaque à foto */
+}
+
+.user-name {
+  margin: 10px 0 5px;
+  font-weight: bold;
+  font-size: 18px;
+  position: relative;
+  z-index: 1; /* Garante que fique acima do fundo */
+}
+
+.user-department {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.user-email {
+  margin: 5px 0 0;
+  color: #666;
+  font-size: 12px;
+  position: relative;
+  z-index: 1;
+}
+.user-name-link {
+  text-decoration: none; /* Remove sublinhado */
+  color: inherit; /* Herda a cor do elemento pai */
+}
+
+.user-name-link:hover {
+  color: inherit; /* Garante que a cor não mude ao passar o mouse */
+}
+
+.status-circle {
+  position: absolute;
+  bottom: 5px;
+  right: 9.5rem;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid white; /* Para destacar o círculo */
+  background-color: grey; /* Cor padrão, será substituída por verde/vermelho */
+}
+
+.status-circle.online {
+  background-color: green;
+}
+
+.status-circle.offline {
+  background-color: red;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>feed_user</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>feed_user</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+	
+	
+var userGR = new GlideRecord('sys_user');
+if (userGR.get(gs.getUserID())) {
+    var username = userGR.name.toString();  // Nome do usuário
+    var avatar = userGR.avatar.toString();  // Foto do avatar (caso exista)
+		var department = userGR.department.getDisplayValue().toString();
+data.firstName = username;
+data.photo = avatar;
+data.department = department;
+data.profile = userGR.sys_id.toString();
+}
+
+	
+//return COVER
+    var gr = new GlideRecord('x_558714_petrux_user_covers');
+    // Adiciona os critérios de consulta
+    gr.addQuery('user', gs.getUserID());
+    gr.addQuery('active', true);
+	  gr.query();
+    gr.setLimit(1);
+    // Executa a consulta
+    if (gr.next()) {
+        // Se encontrar o registro, retorna o valor do campo desejado
+        data.cover = gr.cover.toString(); // Substitua 'cover' pelo nome exato do campo
+    }
+//POSTS COUNT
+	  var postCounter = new GlideRecord('x_558714_petrux_social_posts');
+    postCounter.addQuery('user', gs.getUserID());  // 'user' é o campo que armazena o usuário do post
+    postCounter.query();
+    var postCount = 0;
+    while (postCounter.next()) {
+        postCount++;  // Incrementa o contador de posts
+    }
+    // Retorna o total de posts criados pelo usuário atual para data.postsCount
+    data.postsCount = postCount;
+//COWORKES COUNT
+	var friendsCounter = new GlideRecord('x_558714_petrux_friends');
+	friendsCounter.addQuery('state', 'Accepted');  // Verifica o status de amizade "aceito"
+	friendsCounter.addEncodedQuery('state=Accepted^userDYNAMIC90d1921e5f510100a9ad2572f2b477fe^ORfriendDYNAMIC90d1921e5f510100a9ad2572f2b477fe');
+
+friendsCounter.query();
+
+var friendsCount = 0;
+while (friendsCounter.next()) {
+    friendsCount++;  // Incrementa o contador de amigos
+}
+
+// Retorna o total de amigos para data.friendsCount
+data.friendsCount = friendsCount;
+
+	
+//return my status online or offline
+var sessionUser = new x_558714_petrux.UserStatusUtils();
+var sessionUserFunction = sessionUser.getUserStatus(gs.getUserID());
+data.myStatus = sessionUserFunction;
+})();
+
+
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-07 18:23:28</sys_created_on>
+        <sys_id>cc98c38c830f52108672e480ceaad3a3</sys_id>
+        <sys_mod_count>202</sys_mod_count>
+        <sys_name>feed_user</sys_name>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_update_name>sp_widget_cc98c38c830f52108672e480ceaad3a3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-13 00:35:36</sys_updated_on>
+        <template><![CDATA[<div class="user-card">
+  <!-- Imagem de fundo como uma capa -->
+  <div class="cover">
+    <img 
+      src="{{data.cover ? (data.cover + '.iix') : 'x_558714_petrux.cover_default.png'}}" 
+      class="img-fluid" 
+      alt="Background Image">
+  </div>
+  <!-- Foto de perfil com link -->
+  <div class="profile-image">
+    <a href="?id=profile&userId={{data.profile}}">
+      <img src="{{data.photo}}.iix" alt="User Avatar">
+    </a>
+      <!-- Círculo de status -->
+  <div class="status-circle {{data.myStatus ? 'online' : 'offline'}}"></div>
+  </div>
+
+  <!-- Nome do usuário com link -->
+  <a href="?id=profile&userId={{data.profile}}" class="user-name-link">
+    <h4 class="user-name">{{data.firstName}}</h4>
+  </a>
+  <p class="user-department">{{data.department}}</p>
+
+  <!-- Contadores -->
+  <div class="counters">
+    <div class="counter">
+      <i class="icon icon-posts"></i>
+      <span class="count">{{data.postsCount || 0}}</span>
+      <span class="label">Posts</span>
+    </div>
+    <div class="counter">
+      <i class="icon icon-friends"></i>
+      <span class="count">{{data.friendsCount || 0}}</span>
+      <span class="label">CoWorkers</span>
+    </div>
+  </div>
+]]></template>
+    </sp_widget>
+</record_update>

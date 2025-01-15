@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function() {
+  /* Widget controller */
+  var c = this;
+
+  // Obtém a hora atual
+  var currentHour = new Date().getHours();
+
+  // Define a saudação com base na hora do dia
+  c.greeting = currentHour < 12 ? 'Bom dia!' : 'Boa tarde!';
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.footer-widget {
+  background-color: #343a40;
+  color: white;
+  padding: 20px 10px;
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1 1 30%;
+  margin: 10px;
+}
+
+.footer-section h4 {
+  border-bottom: 2px solid #ea680b;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 5px 0;
+}
+
+.footer-section ul li a {
+  color: #ea680b;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #ea680b;
+  padding-top: 10px;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>petrux_footer</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>petrux_footer</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  data.user = gs.getUser();
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-12 23:05:14</sys_created_on>
+        <sys_id>140935fd830312108672e480ceaad36f</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>petrux_footer</sys_name>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_update_name>sp_widget_140935fd830312108672e480ceaad36f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-12 23:08:43</sys_updated_on>
+        <template><![CDATA[<div class="footer-widget">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Sobre Nós</h4>
+      <p>Consultoria especializada em soluções ServiceNow.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Links Úteis</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contato</a></li>
+        <li><a href="#">Sobre</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Contato</h4>
+      <p>Email: carlospetruciofreitasbarbosa@gmail.com</p>
+      <p>Telefone: +55 (11) 98605-3013</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 PetruX. Todos os direitos reservados.</p>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="PetruX">bce60b0c830f52108672e480ceaad35e</application>
+        <file_path/>
+        <instance_id>98fcf2caeb429a18cbdefceacad0cd4b</instance_id>
+        <instance_name>dev291428</instance_name>
+        <name>sp_widget_140935fd830312108672e480ceaad36f</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller = function() {
+  /* Widget controller */
+  var c = this;
+
+  // Obtém a hora atual
+  var currentHour = new Date().getHours();
+
+  // Define a saudação com base na hora do dia
+  c.greeting = currentHour &lt; 12 ? 'Bom dia!' : 'Boa tarde!';
+};
+]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.footer-widget {
+  background-color: #343a40;
+  color: white;
+  padding: 20px 10px;
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1 1 30%;
+  margin: 10px;
+}
+
+.footer-section h4 {
+  border-bottom: 2px solid #ea680b;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 5px 0;
+}
+
+.footer-section ul li a {
+  color: #ea680b;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #ea680b;
+  padding-top: 10px;
+}
+&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;petrux_footer&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;petrux_footer&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+  data.user = gs.getUser();
+})();
+]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-01-12 23:05:14&lt;/sys_created_on&gt;&lt;sys_id&gt;140935fd830312108672e480ceaad36f&lt;/sys_id&gt;&lt;sys_mod_count&gt;8&lt;/sys_mod_count&gt;&lt;sys_name&gt;petrux_footer&lt;/sys_name&gt;&lt;sys_package display_value="PetruX" source="x_558714_petrux"&gt;bce60b0c830f52108672e480ceaad35e&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="PetruX"&gt;bce60b0c830f52108672e480ceaad35e&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_140935fd830312108672e480ceaad36f&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-01-12 23:08:43&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="footer-widget"&gt;
+  &lt;div class="footer-content"&gt;
+    &lt;div class="footer-section"&gt;
+      &lt;h4&gt;Sobre Nós&lt;/h4&gt;
+      &lt;p&gt;Consultoria especializada em soluções ServiceNow.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="footer-section"&gt;
+      &lt;h4&gt;Links Úteis&lt;/h4&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Contato&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class="footer-section"&gt;
+      &lt;h4&gt;Contato&lt;/h4&gt;
+      &lt;p&gt;Email: carlospetruciofreitasbarbosa@gmail.com&lt;/p&gt;
+      &lt;p&gt;Telefone: +55 (11) 98605-3013&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="footer-bottom"&gt;
+    &lt;p&gt;&amp;copy; 2025 PetruX. Todos os direitos reservados.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1481287390</payload_hash>
+        <record_name>petrux_footer</record_name>
+        <reverted_from/>
+        <source>7ce60b0c830f52108672e480ceaad362</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-12 23:08:43</sys_created_on>
+        <sys_id>13c9b9fd830312108672e480ceaad30e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1945cc6d8fd0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-12 23:08:43</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>d7c9b9fd10031210b5e1c4cec9b86a0d</update_guid>
+        <update_guid_history>d7c9b9fd10031210b5e1c4cec9b86a0d:1481287390,fea9f9fd5c0312101b1b2c04ff293c8d:-301883830,ab493dfde5031210cb472ca51a83a936:-677704141,2449f9fd33031210531066d68b9fd27b:1824470647,9e39b9fd03031210976f660149690b75:189569530,303979fd3303121003a53593b73b8ebb:1508774407,7429bdbd4e031210aab1f854dfab4d27:-1432112052,b119f5fd6703121022ebcccfaefd9b80:-782540095,d40935fda80312105538d083b5293771:782546934</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="petrux_footer">6120c239834312108672e480ceaad338</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-12 23:36:28</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>2b863b1a2c124e80a9a52e92c7747eb9</sys_id>
+        <sys_metadata>140935fd830312108672e480ceaad36f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>petrux_footer</sys_name>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_scope_delete display_value="">38ed18ac66cb43c0ad4828f5fc6ba490</sys_scope_delete>
+        <sys_update_name>sp_widget_140935fd830312108672e480ceaad36f</sys_update_name>
+        <sys_update_version display_value="sp_widget_140935fd830312108672e480ceaad36f">13c9b9fd830312108672e480ceaad30e</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-12 23:36:28</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

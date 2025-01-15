@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="8abf0cd0838392108672e480ceaad320" label="Social Posts" max_length="40" name="x_558714_petrux_social_posts" text_index="true" type="collection">
+        <element label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
+        <element label="Coments" max_length="100000" name="coments" type="string"/>
+        <element label="Content" max_length="1000000" name="content" type="string"/>
+        <index name="index">
+            <element name="user"/>
+        </index>
+    </element>
+</database>

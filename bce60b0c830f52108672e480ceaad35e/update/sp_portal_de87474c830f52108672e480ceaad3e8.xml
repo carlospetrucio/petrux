@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_portal">
+    <sp_portal action="INSERT_OR_UPDATE">
+        <alternate_portal/>
+        <css_variables>$brand-primary:#fc8a3d;
+$body-bg:#ffffff;
+$state-success-text:#1e4335;
+$sp-homepage-bg:#fff;
+$sp-navbar-divider-color:#000000;
+$text-color:#2e2e2e;
+$sp-logo-margin-y:.5rem;
+$navbar-inverse-link-hover-color:#000000;
+$panel-bg:#fff;
+$brand-success:#48C891;
+$navbar-inverse-bg:#fc8a3d;
+$brand-warning:#DFD139;
+$brand-danger:#C83C36;
+$sp-tagline-color:#ffffff;
+$navbar-inverse-link-color:#ffffff;
+$brand-info:#6ABECF;
+$link-color:#000000;
+$sp-logo-margin-x:1.5rem;
+$btn-default-bg:#fff;
+$text-muted:#666666;
+.body{
+background-color: #F4F2EE;
+}</css_variables>
+        <dark_theme/>
+        <default>false</default>
+        <enable_ais>false</enable_ais>
+        <enable_certificate_based_authentication>false</enable_certificate_based_authentication>
+        <enable_favorites>false</enable_favorites>
+        <hide_portal_name>false</hide_portal_name>
+        <homepage display_value="feed">32084f4c830f52108672e480ceaad3a2</homepage>
+        <icon/>
+        <inactive>false</inactive>
+        <kb_knowledge_base/>
+        <kb_knowledge_page display_value="kb_home">e1c919e4dbd3220099f93691f0b8f535</kb_knowledge_page>
+        <login_page display_value="login_petrux">62eb0ca08347d2108672e480ceaad3f6</login_page>
+        <logo/>
+        <notfound_page display_value="404">3c2c9063cb11020000f8d856634c9c1f</notfound_page>
+        <quick_start_config/>
+        <rtl_enabled>false</rtl_enabled>
+        <sc_catalog/>
+        <sc_catalog_page/>
+        <sc_category_page/>
+        <search_application/>
+        <search_results_configuration/>
+        <sp_chat_queue/>
+        <sp_rectangle_menu display_value="Petrux Header Menu">b0957014834792108672e480ceaad3f0</sp_rectangle_menu>
+        <sys_class_name>sp_portal</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-07 18:19:54</sys_created_on>
+        <sys_id>de87474c830f52108672e480ceaad3e8</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>PetruX</sys_name>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_update_name>sp_portal_de87474c830f52108672e480ceaad3e8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-12 23:38:20</sys_updated_on>
+        <theme display_value="PetruX Theme">f0dfbdb5834312108672e480ceaad311</theme>
+        <title>PetruX</title>
+        <ts_index_group/>
+        <url_suffix>petrux</url_suffix>
+    </sp_portal>
+    <sys_translated_text action="delete_multiple" query="documentkey=de87474c830f52108672e480ceaad3e8"/>
+</record_update>

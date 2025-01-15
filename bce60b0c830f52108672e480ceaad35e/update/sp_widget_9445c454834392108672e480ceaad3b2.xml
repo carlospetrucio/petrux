@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {
+    var c = this;
+
+    c.add = function(postId) {
+        c.data.action = "likePost";
+        c.data.postId = postId; // Passa o postId para o servidor
+
+        c.server.update().then(function(response) {
+            c.data.action = undefined;
+
+            // Atualiza o estado do like no record correspondente
+            c.data.records.forEach(function(record) {
+                if (record.sys_id === postId) {
+                    record.liked = response.liked; // Atualiza o estado com a resposta
+                }
+            });
+        });
+    };
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* Estilo para o ícone quando o usuário curtir a postagem */
+.user-photo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 100%; /* Torna a imagem circular */
+  object-fit: cover;
+  border: 1px solid $primary; /* Borda branca ao redor da imagem */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Dá um leve destaque à foto */
+}
+
+.small-text-like {
+  font-size: 1.5rem; /* Tamanho do texto */
+  vertical-align: middle; /* Alinha o texto com o ícone */
+}
+
+.post-card {
+  	margin-top: 1rem;
+  	min-height: 100px;
+  	weight: 100%;
+  	border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .post-card .card-header {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+  }
+  .post-card .card-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+  .post-card .card-body {
+    padding: 10px;
+  }
+  .post-card .form-control {
+    resize: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .post-card .btn {
+    background-color: $primary;
+    border-color: $primary;
+  }
+  .post-card .btn:hover {
+    background-color: $primary;
+    border-color: $primary;
+  }
+.post-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end; /* Alinha os itens à direita */
+  gap: 10px; /* Espaçamento entre os botões */
+}
+
+.post-actions button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.post-actions button:hover {
+  color: #0056b3;
+}
+
+.btn-circle {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: lightgray; /* Cor de fundo do botão */
+  border: 2px solid lightgray; /* Borda do botão */
+}
+
+/* Ícone padrão (não curtido) */
+.icon-like {
+  color: white; /* Ícone branco quando não selecionado */
+  font-size: 20px; /* Tamanho do ícone */
+  transition: color 0.3s ease; /* Suaviza a transição de cor */
+}
+
+/* Ícone quando curtido */
+.icon-like.liked {
+  color: black; /* Ícone preto quando curtido */
+}
+
+.img-thumbnail {
+    padding: .1rem;
+    line-height: 1.42857;
+    background-color: $primary;
+    border: .1rem solid #ddd;
+    border-radius: .4rem;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>feed_postagens</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>feed_postagens</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	// Configuration
+	data.recordsTable = 'x_558714_petrux_social_posts';
+	data.recordsQuery = ''; // The encoded query to filter records (empty means all records)
+	data.recordsFields = ['content', 'user', 'sys_id']; // The fields to retrieve for each record
+	data.recordsPerPage = parseInt($sp.getParameter('display')) || 10;
+	data.userQuery = $sp.getParameter('query');
+
+	// Get pagination parameters
+	data.page_id = $sp.getParameter('id');
+	data.page = parseInt($sp.getParameter('page'), 10) || 1; // Current page number, default to 1
+	data.display = parseInt(data.recordsPerPage, 10) > 0 ? parseInt(data.recordsPerPage, 10) : 10; // Amount of records to display per page
+
+	//LIKES
+if (input && input.action === 'likePost') {
+    var userId = gs.getUserID(); // ID do usuário logado
+    var postId = input.postId; // ID do post
+
+    var likeGr = new GlideRecord('x_558714_petrux_post_likes'); // Tabela de likes
+    likeGr.addQuery('user', userId);
+    likeGr.addQuery('post', postId);
+    likeGr.query();
+
+    if (likeGr.next()) {
+        // Se já deu like, remove
+        likeGr.deleteRecord();
+        data.liked = false; // Retorna que o post não está curtido
+    } else {
+        // Caso contrário, adiciona o like
+        var newLike = new GlideRecord('x_558714_petrux_post_likes');
+        newLike.initialize();
+        newLike.user = userId;
+        newLike.post = postId;
+        newLike.liked_at = new GlideDateTime();
+        newLike.insert();
+        data.liked = true; // Retorna que o post está curtido
+    }
+}
+
+
+	
+	// Count total records
+	var countGa = new GlideAggregate(data.recordsTable);
+	countGa.addEncodedQuery(data.recordsQuery);
+	//countGa.addEncodedQuery(data.userQuery);
+	countGa.addAggregate('COUNT');
+	countGa.query();
+	if (countGa.next()) {
+		data.count = parseInt(countGa.getAggregate('COUNT'), 10);
+	}
+
+	data.pages = calculatePaginationPages(data.count, data.display, data.page);
+
+	// Adjust current page if it exceeds the total number of pages
+	if (data.pages[data.pages.length - 1] < data.page) {
+		data.page = Math.ceil(data.count / data.display);
+	}
+
+	// Calculate the starting row for the current page
+	data.rowStart = (data.page - 1) * data.display;
+	var rowEnd = data.rowStart + data.display;
+
+	// Fetch records for the current page
+data.records = [];
+var recordsGr = new GlideRecord(data.recordsTable);
+recordsGr.orderByDesc('sys_created_on'); // Ordena pelos registros mais recentes
+recordsGr.addEncodedQuery(data.recordsQuery);
+// recordsGr.addEncodedQuery(data.userQuery);
+recordsGr.chooseWindow(data.rowStart, rowEnd);
+recordsGr.query();
+while (recordsGr.next()) {
+    var record = {};
+    
+    // Preenche os campos do record conforme a sua configuração
+    for (var i = 0; i < data.recordsFields.length; i++) {
+        var fieldName = data.recordsFields[i];
+        record[fieldName] = (recordsGr.getElement(fieldName) + "").trim();
+    }
+
+	
+	  var likeCountGr = new GlideRecord('x_558714_petrux_post_likes');
+    likeCountGr.addQuery('post', recordsGr.sys_id);
+    likeCountGr.query();
+    record.like_count = likeCountGr.getRowCount(); // Total de curtidas
+	
+    // Busca a foto do usuário
+    if (record.user) {
+        var userGr = new GlideRecord('sys_user');
+        if (userGr.get(record.user)) {
+            record.user_photo = userGr.avatar.toString(); // Foto do usuário
+            record.user_name = userGr.name + ''; // Nome do usuário (opcional)
+        }
+    } else {
+        record.user_photo = '';
+    }
+
+
+
+
+	
+    // Verifica se o usuário logado deu like neste post
+    var userId = gs.getUserID(); // ID do usuário logado
+    var likeGr2 = new GlideRecord('x_558714_petrux_post_likes');
+    likeGr2.addQuery('user', userId); // Verifica se o like é do usuário logado
+    likeGr2.addQuery('post', recordsGr.sys_id); // Verifica se o post é o mesmo
+    likeGr2.query();
+    
+    if (likeGr2.next()) {
+        // Se o like for encontrado, marca como "liked"
+        record.liked = true;
+    } else {
+        record.liked = false;
+    }
+
+    data.records.push(record);
+}
+
+
+	/**
+	 * Calculates the page numbers to display in the pagination control
+	 * @param {number} totalRecords - Total number of records
+	 * @param {number} recordsPerPage - Number of records per page
+	 * @param {number} currentPage - Current page number
+	 * @returns {Array} An array of page numbers and ellipses to display
+	 */
+	function calculatePaginationPages(totalRecords, recordsPerPage, currentPage) {
+		if (recordsPerPage <= 0) {
+			return [];
+		}
+
+		var totalPages = Math.ceil(totalRecords / recordsPerPage);
+		var pages = [];
+		var startPage, endPage;
+
+		// Determine the range of pages to display
+		if (totalPages <= 7) {
+			// If 7 or fewer pages, show all
+			startPage = 1;
+			endPage = totalPages;
+		} else {
+			// For more than 7 pages, use a sliding window
+			if (currentPage < 4) {
+				startPage = 1;
+				endPage = 5;
+			} else if (currentPage === 5) {
+				startPage = 3;
+				endPage = 7;
+			} else if (currentPage + 2 >= totalPages) {
+				startPage = totalPages - 4;
+				endPage = totalPages;
+			} else {
+				startPage = currentPage - 2;
+				endPage = currentPage + 2;
+			}
+		}
+
+		// Add first page and ellipsis if necessary
+		if (startPage > 1) {
+			pages.push(1);
+			if (startPage > 2) {
+				pages.push('...');
+			}
+		}
+
+		// Add page numbers
+		for (var i = startPage; i <= endPage; i++) {
+			pages.push(i);
+		}
+
+		// Add last page and ellipsis if necessary
+		if (endPage < totalPages) {
+			if (endPage < totalPages - 1) {
+				pages.push('...');
+			}
+			pages.push(totalPages);
+		}
+
+		return pages;
+	}
+	
+	
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-07 22:48:39</sys_created_on>
+        <sys_id>9445c454834392108672e480ceaad3b2</sys_id>
+        <sys_mod_count>257</sys_mod_count>
+        <sys_name>feed_postagens</sys_name>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_update_name>sp_widget_9445c454834392108672e480ceaad3b2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-09 23:47:46</sys_updated_on>
+        <template><![CDATA[<div class="card post-card" ng-repeat="record in data.records">
+  <div class="card-body">
+    <!-- Exibir foto do usuário e nome ao lado -->
+    <div class="d-flex align-items-center mb-3">
+      <div class="user-photo me-3 d-flex align-items-center">
+        <img 
+          ng-src="{{record.user_photo}}.iix" 
+          alt="{{record.user_name || 'Usuário'}}" 
+          class="img-thumbnail rounded-circle" 
+          style="width: 50px; height: 50px;">
+        
+        <strong style="margin-left: 10px;">{{record.user_name || 'Usuário não identificado'}}</strong>
+      </div>
+    </div>
+    <!-- Exibir o conteúdo do post -->
+  <div class="post-content" style="margin-top: 20px; margin-left: 5px;">
+      {{record.content}}
+
+    </div>
+
+    <!-- Botões de like e compartilhar -->
+    <!--LOVE TESTE-->
+
+    <!-- -->
+    <div class="post-actions d-flex justify-content-end">
+<button 
+    class="btn btn-light" 
+    title="Curtir" 
+    ng-click="c.add(record.sys_id)">
+    <span 
+        class="icon icon-like"  
+        ng-class="{'liked': record.liked}">
+    </span>
+  <span class="small-text-like">{{record.like_count || 0}}</span>
+</button>
+      
+
+
+
+      <button class="btn btn-light btn-circle" title="Compartilhar">
+        <span class="icon icon-share"></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div>
+
+  <div class="text-center">
+  <nav aria-label="Page navigation" ng-if="data.count > 0">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="?id={{data.page_id}}&page={{data.page-1}}&display={{data.display}}&query={{data.userQuery}}" aria-label="Previous" ng-if="data.page > 1">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="page-link disabled" aria-label="Previous" ng-if="data.page <= 1">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item" ng-repeat="page in data.pages track by $index" ng-class="{active: page == data.page}"><a class="page-link" href="?id={{data.page_id}}&page={{page}}&display={{data.display}}&query={{data.userQuery}}" ng-if="page != '...'">{{page}}</a><span ng-if="page == '...'">...</span></li>
+      <li class="page-item">
+        <a class="page-link" href="?id={{data.page_id}}&page={{data.page+1}}&display={{data.display}}&query={{data.userQuery}}" aria-label="Next" ng-if="data.page < data.pages[data.pages.length - 1]">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+        <a class="page-link disabled" aria-label="Next" ng-if="data.page >= data.pages[data.pages.length - 1]">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div></div>
+]]></template>
+    </sp_widget>
+</record_update>

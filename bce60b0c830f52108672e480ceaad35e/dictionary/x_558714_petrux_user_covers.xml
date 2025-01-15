@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="42104590838792108672e480ceaad34b" label="User Covers" max_length="40" name="x_558714_petrux_user_covers" text_index="true" type="collection">
+        <element label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
+        <element label="Cover" max_length="40" name="cover" type="user_image"/>
+        <element label="Active" max_length="40" name="active" type="boolean"/>
+        <index name="index">
+            <element name="user"/>
+        </index>
+    </element>
+</database>

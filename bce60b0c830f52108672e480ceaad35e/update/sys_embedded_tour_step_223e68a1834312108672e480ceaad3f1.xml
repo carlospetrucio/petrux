@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_embedded_tour_step">
+    <sys_embedded_tour_step action="INSERT_OR_UPDATE">
+        <action>true</action>
+        <action_event>click</action_event>
+        <action_target/>
+        <action_target_ref/>
+        <active>true</active>
+        <content><![CDATA[Discover a platform designed to connect people, share knowledge, and foster collaboration in a seamless and intuitive way.
+<br /><br />
+In this guided tour, we’ll walk you through the key features of the portal, including:
+<br /><br />
+<b>Your Profile:</b> Customize your information and manage your preferences.
+<br />
+<b>News Feed: </b>Stay updated with posts, updates, and interactions.
+<br />
+<b>Groups and Communities: </b>Join discussions and exchange ideas on topics that matter to you.
+<br />
+<b>Private Messaging: </b>Communicate directly with your colleagues.
+<br />
+
+<b>Settings: </b>Tailor your portal experience to meet your needs.
+<br /><br />
+Click Next to start the tour or close this window to explore on your own. We’re here to make your experience unique and productive!]]></content>
+        <guide display_value="PetruX">fa4de8e9830312108672e480ceaad3c9</guide>
+        <implicit>false</implicit>
+        <link/>
+        <name>Introduction</name>
+        <options/>
+        <order>0</order>
+        <placement>bottom</placement>
+        <skippable>false</skippable>
+        <step_type>intro</step_type>
+        <sys_class_name>sys_embedded_tour_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 23:00:03</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>223e68a1834312108672e480ceaad3f1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Introduction</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_update_name>sys_embedded_tour_step_223e68a1834312108672e480ceaad3f1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 23:00:03</sys_updated_on>
+        <target/>
+        <target_ref/>
+        <title><![CDATA[Welcome to Our Social Network on ServiceNow]]></title>
+        <ui_version>dynamic</ui_version>
+        <view/>
+        <window/>
+    </sys_embedded_tour_step>
+    <sys_translated_text action="delete_multiple" query="documentkey=223e68a1834312108672e480ceaad3f1"/>
+</record_update>

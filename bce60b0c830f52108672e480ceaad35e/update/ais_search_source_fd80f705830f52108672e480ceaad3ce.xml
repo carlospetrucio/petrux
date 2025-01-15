@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ais_search_source">
+    <ais_search_source action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition/>
+        <datasource display_value="">x_558714_petrux_friends</datasource>
+        <has_dynamic_filters>false</has_dynamic_filters>
+        <name>Friends</name>
+        <sys_class_name>ais_search_source</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-10 23:52:01</sys_created_on>
+        <sys_id>fd80f705830f52108672e480ceaad3ce</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Friends</sys_name>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_update_name>ais_search_source_fd80f705830f52108672e480ceaad3ce</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-10 23:52:01</sys_updated_on>
+    </ais_search_source>
+</record_update>

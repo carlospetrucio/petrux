@@ -1,0 +1,1580 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_pd_process_definition">
+    <sys_pd_process_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <description/>
+        <designer_state>{"diagram":{"hiddenElements":{"edges":{}}}}</designer_state>
+        <engine_major_version/>
+        <label>New Connection Request</label>
+        <name>new_connection_request</name>
+        <now_assist_prompt/>
+        <process_type/>
+        <restartable>RESTARTABLE_FALSE</restartable>
+        <run_on_pad_engine>false</run_on_pad_engine>
+        <schema_version>2</schema_version>
+        <snapshot display_value="new_connection_request">7daba49d830392108672e480ceaad3b9</snapshot>
+        <start_non_blocking>true</start_non_blocking>
+        <status>published</status>
+        <sys_class_name>sys_pd_process_definition</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:45:38</sys_created_on>
+        <sys_id>4c06ec55830392108672e480ceaad3e4</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>New Connection Request</sys_name>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_update_name>sys_pd_process_definition_4c06ec55830392108672e480ceaad3e4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 04:10:20</sys_updated_on>
+        <view_type>DIAGRAM</view_type>
+    </sys_pd_process_definition>
+    <sys_translated_text action="delete_multiple" query="documentkey=4c06ec55830392108672e480ceaad3e4"/>
+    <sys_pd_process_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <description/>
+        <designer_state>{"diagram":{"hiddenElements":{"edges":{}}}}</designer_state>
+        <engine_major_version/>
+        <label>New Connection Request</label>
+        <name>new_connection_request</name>
+        <now_assist_prompt/>
+        <process_type/>
+        <restartable>RESTARTABLE_FALSE</restartable>
+        <run_on_pad_engine>false</run_on_pad_engine>
+        <schema_version>2</schema_version>
+        <snapshot display_value="new_connection_request">7daba49d830392108672e480ceaad3b9</snapshot>
+        <start_non_blocking>true</start_non_blocking>
+        <status>published</status>
+        <sys_class_name>sys_pd_process_definition</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:45:38</sys_created_on>
+        <sys_id>4c06ec55830392108672e480ceaad3e4</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>New Connection Request</sys_name>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_update_name>sys_pd_process_definition_4c06ec55830392108672e480ceaad3e4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 04:10:20</sys_updated_on>
+        <view_type>DIAGRAM</view_type>
+    </sys_pd_process_definition>
+    <sys_translated_text action="delete_multiple" query="documentkey=4c06ec55830392108672e480ceaad3e4"/>
+    <sys_pd_lane action="delete_multiple" query="process_definition=4c06ec55830392108672e480ceaad3e4^sys_idNOT IN171701e01717f7e01717c9b017175260"/>
+    <sys_pd_lane action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition_to_run/>
+        <description/>
+        <label>New Requested</label>
+        <lane_condition/>
+        <name>new_stage</name>
+        <order>1</order>
+        <process_definition display_value="New Connection Request">4c06ec55830392108672e480ceaad3e4</process_definition>
+        <restart_rule>RUN_ONLY_ONCE</restart_rule>
+        <start_rule display_value="Immediately">b823830967fc41ddb84959d97897b1ae</start_rule>
+        <start_rule_vars/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:45:56</sys_created_on>
+        <sys_id>171701e01717f7e01717c9b017175260</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:11</sys_updated_on>
+        <visible_rule/>
+    </sys_pd_lane>
+    <sys_translated_text action="delete_multiple" query="documentkey=171701e01717f7e01717c9b017175260"/>
+    <sys_variable_value action="delete_multiple" query="document_key=171701e01717f7e01717c9b017175260"/>
+    <sys_pd_activity action="delete_multiple" query="process_definition=4c06ec55830392108672e480ceaad3e4^sys_idNOT IN666ecc70666ed430666eb1e0666e92a0"/>
+    <sys_pd_activity action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <activity_definition display_value="Send Email">caee4d471b0c1010affd0e55cc4bcbaf</activity_definition>
+        <condition_to_run/>
+        <derivative_order/>
+        <derivative_parent/>
+        <description/>
+        <inputs/>
+        <inputs/>
+        <label>Send Email</label>
+        <lane display_value="New Requested">171701e01717f7e01717c9b017175260</lane>
+        <name>send_email</name>
+        <order>1</order>
+        <outputs/>
+        <process_definition display_value="New Connection Request">4c06ec55830392108672e480ceaad3e4</process_definition>
+        <restart_rule>RUN_ONLY_ONCE</restart_rule>
+        <start_rule display_value="Immediately">ef8ab8c0a3f04bceb117263f51401070</start_rule>
+        <start_rule_vars/>
+        <swim_lane/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>666ecc70666ed430666eb1e0666e92a0</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 04:10:18</sys_updated_on>
+        <type_vals/>
+        <type_vals/>
+        <variant/>
+    </sys_pd_activity>
+    <sys_translated_text action="delete_multiple" query="documentkey=666ecc70666ed430666eb1e0666e92a0"/>
+    <sys_variable_value action="delete_multiple" query="document_key=666ecc70666ed430666eb1e0666e92a0"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>8</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1336a495830392108672e480ceaad36e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value/>
+        <variable display_value="Bcc Email Address">5d4898f4532220109f15ddeeff7b12b7</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1336a495830392108672e480ceaad382</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Show SLA">54c49bc60f3200102920c912d4767ee2</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1736a495830392108672e480ceaad36d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value/>
+        <variable display_value="Assignment Group">df09be471b405010affd0e55cc4bcb45</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1736a495830392108672e480ceaad381</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Attachments read only">576de7780f1300102920c912d4767e52</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>6</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1b36a495830392108672e480ceaad36c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value/>
+        <variable display_value="Cc Email Address">dd4898f4532220109f15ddeeff7b12aa</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1b36a495830392108672e480ceaad373</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value/>
+        <variable display_value="Experience Status Record">5e5272b2c3211010381b60bc0eba8f13</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1b36a495830392108672e480ceaad380</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Is Automated">63fd1eeac7e60010bfbaf89f51c26059</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1f36a495830392108672e480ceaad36e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value/>
+        <variable display_value="Assigned To">5b09be471b405010affd0e55cc4bcb4f</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1f36a495830392108672e480ceaad382</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value/>
+        <variable display_value="Attachment Source">4f0e5d7e736100104a905ee515f6a70b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>7</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5336a495830392108672e480ceaad36d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value/>
+        <variable display_value="Bcc">2709be471b405010affd0e55cc4bcb69</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5336a495830392108672e480ceaad381</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:51:50</sys_updated_on>
+        <value/>
+        <variable display_value="Description">1d27b10ac7200010bfbaf89f51c26016</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5736a495830392108672e480ceaad373</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value>&lt;p&gt;Prompts for confirmation of email subject and body before sending.&lt;/p&gt;</value>
+        <variable display_value="Pending State Description">6688ff5d0700101070e493d0fad300f6</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5736a495830392108672e480ceaad380</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value>sys_flow_data</value>
+        <variable display_value="Associated table">77edf4e40f100010f5bf5ae9c4767edb</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>12</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5b36a495830392108672e480ceaad36e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value/>
+        <variable display_value="Table">e8e44799536220109f15ddeeff7b1250</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5b36a495830392108672e480ceaad382</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value/>
+        <variable display_value="Record fields">05bee8875b00001070e4492c11f91afb</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5f36a495830392108672e480ceaad36d</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 04:10:18</sys_updated_on>
+        <value>&lt;p&gt; &lt;/p&gt;
+&lt;style&gt;
+        .container {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+        }
+        .header {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .content {
+            font-size: 14px;
+            color: #555;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #fc8a3d;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #888;
+        }
+    &lt;/style&gt;
+&lt;div class="container"&gt;
+&lt;div class="header"&gt;Hi,&lt;/div&gt;
+&lt;div class="content"&gt;You have received a new friend request on our social network! &lt;br /&gt;&lt;br /&gt;&lt;strong&gt;Requester:&lt;/strong&gt; ${user} &lt;br /&gt;&lt;br /&gt;To accept or decline the request, click the button below: &lt;br /&gt;&lt;a class="button" href="$%7blink_to_manage_request%7d" rel="nofollow"&gt;Manage Friend Request&lt;/a&gt;&lt;/div&gt;
+&lt;div class="footer"&gt;&lt;hr /&gt;
+&lt;p&gt;Thank you for being part of our community!&lt;/p&gt;
+&lt;p&gt;The Social Network Team&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</value>
+        <variable display_value="Body">a709be471b405010affd0e55cc4bcb77</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5f36a495830392108672e480ceaad381</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value>Send an email notification</value>
+        <variable display_value="Pending State Title">e9ae23190700101070e493d0fad300c1</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>9336a495830392108672e480ceaad383</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value>collect_data</value>
+        <variable display_value="Form View">7cb449e85b41001070e4492c11f91a06</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>9736a495830392108672e480ceaad36e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value/>
+        <variable display_value="To">9309be471b405010affd0e55cc4bcb58</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>9736a495830392108672e480ceaad382</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value>Send Email</value>
+        <variable display_value="Tagline">9a0c340673030010fe4a6da44cf6a7de</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>4</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>9b36a495830392108672e480ceaad36d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value/>
+        <variable display_value="To Email Address">d54898f4532220109f15ddeeff7b1276</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>9b36a495830392108672e480ceaad381</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value/>
+        <variable display_value="Form fields">fbc1f11b5b40001070e4492c11f91a45</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>13</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>9f36a495830392108672e480ceaad36c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:51:50</sys_updated_on>
+        <value>no</value>
+        <variable display_value="Wait for user input">2b09be471b405010affd0e55cc4bcb85</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>9f36a495830392108672e480ceaad380</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value>envelope_outline</value>
+        <variable display_value="Icon">ad4db04673030010fe4a6da44cf6a798</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>11</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>d336a495830392108672e480ceaad36e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value/>
+        <variable display_value="Target Record">ef09be471b405010affd0e55cc4bcb7c</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>d336a495830392108672e480ceaad382</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value>sys_flow_data</value>
+        <variable display_value="Experience Status Table">4612be72c3211010381b60bc0eba8f47</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>9</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>d736a495830392108672e480ceaad36d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:51:50</sys_updated_on>
+        <value>New Connection Request</value>
+        <variable display_value="Subject">6f09be471b405010affd0e55cc4bcb71</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>d736a495830392108672e480ceaad381</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:51:50</sys_updated_on>
+        <value/>
+        <variable display_value="Title">13597d8ac7200010bfbaf89f51c2609e</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>5</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>db36a495830392108672e480ceaad36c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value/>
+        <variable display_value="Cc">eb09be471b405010affd0e55cc4bcb60</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>db36a495830392108672e480ceaad373</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value/>
+        <variable display_value="Footer">71ae56b6b74100101a6ddb91de11a9a1</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>db36a495830392108672e480ceaad380</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value/>
+        <variable display_value="Associated record">8c1ef8e40f100010f5bf5ae9c4767ed6</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>666ecc70666ed430666eb1e0666e92a0</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>df36a495830392108672e480ceaad382</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Show Checklist">d803775a5b01001031a67d6f7281c7aa</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=666ecc70666ed430666eb1e0666e92a0"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>assigned_to</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>9736a495830392108672e480ceaad36c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value>{{pd.inputRecord.assigned_to}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>assignment_group</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>9f36a495830392108672e480ceaad36a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value>{{pd.inputRecord.assignment_group}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>associated_record</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1f36a495830392108672e480ceaad370</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value>{{vl.Send Email with user input Activity.e17e6678-8e97-4584-a903-cfa6e47fd378./end.record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>associated_table</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>9736a495830392108672e480ceaad370</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>attachments_read_only</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5736a495830392108672e480ceaad371</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>attachment_source</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5f36a495830392108672e480ceaad372</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>bcc</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>db36a495830392108672e480ceaad36a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>bcc_email_address</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>9b36a495830392108672e480ceaad36b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>body</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>d736a495830392108672e480ceaad36b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>cc</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5736a495830392108672e480ceaad36a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>cc_email_address</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5f36a495830392108672e480ceaad369</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>description</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>9336a495830392108672e480ceaad371</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value>{{act.666ecc70666ed430666eb1e0666e92a0.description}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>experience_status_record</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1336a495830392108672e480ceaad370</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value>{{vl.Send Email with user input Activity.e17e6678-8e97-4584-a903-cfa6e47fd378./end.record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>experience_status_table</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1736a495830392108672e480ceaad372</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>footer</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>d336a495830392108672e480ceaad370</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>form_fields</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>db36a495830392108672e480ceaad371</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>form_view</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>d336a495830392108672e480ceaad373</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>icon</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>df36a495830392108672e480ceaad370</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>is_automated</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5b36a495830392108672e480ceaad370</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>pending_description</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5f36a495830392108672e480ceaad36f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>pending_title</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>9f36a495830392108672e480ceaad371</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record_fields</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>9b36a495830392108672e480ceaad372</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>show_checklist</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1336a495830392108672e480ceaad373</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>show_sla</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5336a495830392108672e480ceaad372</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>subject</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5336a495830392108672e480ceaad36b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>d336a495830392108672e480ceaad36c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value>{{pd.inputRecord.:TN}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>tagline</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>d736a495830392108672e480ceaad372</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>target_record</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5f36a495830392108672e480ceaad36b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value>{{pd.inputRecord}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>title</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1b36a495830392108672e480ceaad371</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value>{{act.666ecc70666ed430666eb1e0666e92a0.label}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>to</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1336a495830392108672e480ceaad36c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:51:50</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value>{{pd.inputRecord.friend}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>to_email_address</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1736a495830392108672e480ceaad36b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>wait</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1b36a495830392108672e480ceaad36a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_d709be471b405010affd0e55cc4bcb3e^id=666ecc70666ed430666eb1e0666e92a0"/>
+    <sys_element_mapping action="delete_multiple" query="id=666ecc70666ed430666eb1e0666e92a0"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>assigned_to</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>9736a495830392108672e480ceaad36c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value>{{pd.inputRecord.assigned_to}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>assignment_group</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>9f36a495830392108672e480ceaad36a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value>{{pd.inputRecord.assignment_group}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>associated_record</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1f36a495830392108672e480ceaad370</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value>{{vl.Send Email with user input Activity.e17e6678-8e97-4584-a903-cfa6e47fd378./end.record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>associated_table</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>9736a495830392108672e480ceaad370</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>attachments_read_only</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5736a495830392108672e480ceaad371</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>attachment_source</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5f36a495830392108672e480ceaad372</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>bcc</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>db36a495830392108672e480ceaad36a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>bcc_email_address</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>9b36a495830392108672e480ceaad36b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>body</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>d736a495830392108672e480ceaad36b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>cc</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5736a495830392108672e480ceaad36a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>cc_email_address</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5f36a495830392108672e480ceaad369</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>description</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>9336a495830392108672e480ceaad371</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value>{{act.666ecc70666ed430666eb1e0666e92a0.description}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>experience_status_record</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1336a495830392108672e480ceaad370</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value>{{vl.Send Email with user input Activity.e17e6678-8e97-4584-a903-cfa6e47fd378./end.record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>experience_status_table</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1736a495830392108672e480ceaad372</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>footer</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>d336a495830392108672e480ceaad370</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>form_fields</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>db36a495830392108672e480ceaad371</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>form_view</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>d336a495830392108672e480ceaad373</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>icon</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>df36a495830392108672e480ceaad370</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>is_automated</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5b36a495830392108672e480ceaad370</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>pending_description</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5f36a495830392108672e480ceaad36f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>pending_title</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>9f36a495830392108672e480ceaad371</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record_fields</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>9b36a495830392108672e480ceaad372</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>show_checklist</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1336a495830392108672e480ceaad373</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>show_sla</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5336a495830392108672e480ceaad372</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>subject</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5336a495830392108672e480ceaad36b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>d336a495830392108672e480ceaad36c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value>{{pd.inputRecord.:TN}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>tagline</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>d736a495830392108672e480ceaad372</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>target_record</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>5f36a495830392108672e480ceaad36b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value>{{pd.inputRecord}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>title</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1b36a495830392108672e480ceaad371</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_e12af577871333003058d1a936cb0ba4</table>
+        <value>{{act.666ecc70666ed430666eb1e0666e92a0.label}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>to</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1336a495830392108672e480ceaad36c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:51:50</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value>{{pd.inputRecord.friend}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>to_email_address</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1736a495830392108672e480ceaad36b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>wait</field>
+        <id>666ecc70666ed430666eb1e0666e92a0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:46:41</sys_created_on>
+        <sys_id>1b36a495830392108672e480ceaad36a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:46:41</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_d709be471b405010affd0e55cc4bcb3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_pd_process_variant action="delete_multiple" query="process_definition=4c06ec55830392108672e480ceaad3e4"/>
+    <sys_pd_derivative action="delete_multiple" query="derivative_parent=666ecc70666ed430666eb1e0666e92a0"/>
+    <sys_pd_activity_override action="delete_multiple" query="override_parent=666ecc70666ed430666eb1e0666e92a0"/>
+    <sys_pd_snapshot action="delete_multiple" query="sys_id=7daba49d830392108672e480ceaad3b9^sys_idNOT IN7daba49d830392108672e480ceaad3b9"/>
+    <sys_pd_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <derivatives>{"table":"sys_pd_snapshot","id":"7daba49d830392108672e480ceaad3b9","name":"derivatives","type":"com.snc.pd.model.serialization.DerivativeFetcher"}</derivatives>
+        <name>new_connection_request</name>
+        <process_definition>{"table":"sys_pd_snapshot","id":"7daba49d830392108672e480ceaad3b9","name":"process_definition","type":"com.snc.pd.model.ProcessDefinition"}</process_definition>
+        <process_dependencies>{"table":"sys_pd_snapshot","id":"7daba49d830392108672e480ceaad3b9","name":"process_dependencies","type":"com.snc.pd.model.dependency.InstructionBasedProcessDependenciesCollection"}</process_dependencies>
+        <process_plan>{"table":"sys_pd_snapshot","id":"7daba49d830392108672e480ceaad3b9","name":"process_plan","type":"com.snc.process_flow.engine.ProcessPlan"}</process_plan>
+        <source display_value="New Connection Request">4c06ec55830392108672e480ceaad3e4</source>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 04:10:20</sys_created_on>
+        <sys_id>7daba49d830392108672e480ceaad3b9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 04:10:20</sys_updated_on>
+    </sys_pd_snapshot>
+    <sys_json_chunk action="delete_multiple" query="document_id=7daba49d830392108672e480ceaad3b9"/>
+    <sys_pd_snapshot_chunk action="delete_multiple" query="document_id=7daba49d830392108672e480ceaad3b9^sys_idNOT INb5aba49d830392108672e480ceaad3ba,b9aba49d830392108672e480ceaad3ba,bdaba49d830392108672e480ceaad3ba,f1aba49d830392108672e480ceaad3bb"/>
+    <sys_pd_snapshot_chunk action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAA/+1Wy27aQBT9lWjUZRbj1xizIymVKiEiQbqoKmTN4040qhnTsSFCKP/e6wdgYpKQKMtsuJLnPs495+DxjhhFhiSUlIGMokFAg8T36IDFPoQDKoFzFUBIronlS8BMC4+pzK0FWZrcpg7+raEo8TzjAjJMmMLj1e0h4WrWSbBQkOGfXTPSi72YekCrqOMmykTUMfIZPR1ZlPwB8BFGV5Jh20MkXLAwUZS1sEMuAqlYxBTgSnCmx7emwzXhiG9jym2qQBtrKrBkaNdZdlylX6SgkM6sTpMtXLZO7hS4fVndMXXrDPpP0nK7Ovd4wx0SuHu6Jg769aiKqtdIyxwPDgAVrMAqsNLU9C+qJ85sOK7f6qFNVlbICILEGYbb8qfal9dEd/i6hPanRYv7O2R8e1fz1SLvrpZvwDmjoD7CM4R5kFa3M7TXzAiTGA2aMM1iweC8tFX9O4VtSr5k3V5C+Qdlbbc6SBuoZo6QzRwGzPcGAQs1xIl/Xtp9j3fKeyz7knh7CfUflLj78m/f+KDIKVfELJegDC/hiMl0bwTG8A6SMa2iCoM6ChSmionPOzdCgbSksOQme8kQRHKAUIWxJ6j0qEe51opCFEkZCim47txYc+x2NW67nfiEkA+4xHtl7Z5TCOgBFwNJeaApIsOFvdhngY68EFHHlFzkIzL7NU3vppPf+HM7JucsRcjnGOoClTqGezP7TcORGUhkljw33eLcOi906jH47H93n8/2FL3KazW0TeCiOR/P70ez+9HNZJz+GE3m4yNvLaSVyyUUxQQ2kI26rq/gyrxeEXVnFI2Kn1866n1+RQfnTHN7k+Xyr7EPZFi6NTz9B0JwV8DACQAA</data>
+        <document_id display_value="new_connection_request">7daba49d830392108672e480ceaad3b9</document_id>
+        <field>process_definition</field>
+        <length>864</length>
+        <position>0</position>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 04:10:20</sys_created_on>
+        <sys_id>b5aba49d830392108672e480ceaad3ba</sys_id>
+    </sys_pd_snapshot_chunk>
+    <sys_pd_snapshot_chunk action="INSERT_OR_UPDATE">
+        <data>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</data>
+        <document_id display_value="new_connection_request">7daba49d830392108672e480ceaad3b9</document_id>
+        <field>derivatives</field>
+        <length>3708</length>
+        <position>0</position>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 04:10:20</sys_created_on>
+        <sys_id>b9aba49d830392108672e480ceaad3ba</sys_id>
+    </sys_pd_snapshot_chunk>
+    <sys_pd_snapshot_chunk action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAA/5VRsW7DIBD9F9Qxw9nGh/FWqUuHTh2rDAecIyQXWzbJEuXfC4l3KMtjePfeu3d3sW6L5X3/4JWD42A972K8izdDO+fPjTZPIX46MYbrPJ/ETIHfbfQ3HxP3i9bMalSjoGHIOKkXWm2e2LcIYvwRiMjWKsjoZPdEk2Yy6pZAnB8nQSGlicv2zbFe+nwqiydWkvfBLr8+XA5taSGN9f3QQafbBgZULcsBLBO5jmWOPWkyKLWbmhdHapVGNE6oDDKwSO7m4AAeOpJMZx326Dh5cNYpetVtUfZKOsXMtedYrvGy/K+vmnw1fZXz1fVVc7+avsr3e6T3B8YlaVhRAwAA</data>
+        <document_id display_value="new_connection_request">7daba49d830392108672e480ceaad3b9</document_id>
+        <field>process_dependencies</field>
+        <length>352</length>
+        <position>0</position>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 04:10:20</sys_created_on>
+        <sys_id>bdaba49d830392108672e480ceaad3ba</sys_id>
+    </sys_pd_snapshot_chunk>
+    <sys_pd_snapshot_chunk action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAA/2VSS4/aMBD+L3POIQv7AG4UlirSsitlUTlUFZrYA3HreFw/dhet+O91AklRe7PH871m/AlKwsxErTMw2BDMwND7TrAxJIJis3P0O5IPkAFbD7PvPzKoNItf6fx5ysAHDC1qOy82xfNX6CoHunSSOShDC7RYKa3C8Rs5n0hhdpNnoPwmEZcxXfeoPWXgSLCTWwyiJvccZcdzNhdU82/pDd3FhItmno7gjz5QA11hq0Jdsu6dWIyeZEnoW3mAM+OGS/Kxi50qNfolBnwNjrAZTJFz7NbkfYrVS0tuUJliGF1CPrZtA0ig1socXjk6MaBErbRcsAn0EQo55NDoQ4deYDzUYeDgtyStJO0atDaR9f3dgJ9UimrIDdwXQcH2rx5bRXLluOkrsQ2xayigTEGvsV/anS44mrBG2z+c17fGn+yGzY2SAYPW1xza/PAgscLbqZyM8/F0dJNP7h9GdDvJBSHKcTVtJ80B9Yslh+2P8o8fJGKgBM7bvTgyoVj2kumTrdiVZNmFq8zsVLJyWfde8/syZVA63RO77cxvjm1yWD29bKEHFHJuZPtwhbyMCCpB93mVi2R8f/ef8TuC0+kPaqimYx4DAAA=</data>
+        <document_id display_value="new_connection_request">7daba49d830392108672e480ceaad3b9</document_id>
+        <field>process_plan</field>
+        <length>620</length>
+        <position>0</position>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 04:10:20</sys_created_on>
+        <sys_id>f1aba49d830392108672e480ceaad3bb</sys_id>
+    </sys_pd_snapshot_chunk>
+    <sys_flow_compiled_flow action="delete_multiple" query="sys_id=79aba49d790392108ca81b15347e00bb^sys_idNOT IN79aba49d790392108ca81b15347e00bb"/>
+    <sys_flow_compiled_flow action="INSERT_OR_UPDATE">
+        <parent_snapshot_id/>
+        <signature/>
+        <snapshot_id>7daba49d830392108672e480ceaad3b9</snapshot_id>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2025-01-11 04:10:20</sys_created_on>
+        <sys_id>79aba49d790392108ca81b15347e00bb</sys_id>
+    </sys_flow_compiled_flow>
+    <sys_flow_compiled_flow_chunk action="delete_multiple" query="document_id=79aba49d790392108ca81b15347e00bb^sys_idNOT IN7daba49d830392108672e480ceaad3bc,f1aba49d830392108672e480ceaad3bc,bdaba49d830392108672e480ceaad3bb,39aba49d830392108672e480ceaad3bc"/>
+    <sys_flow_compiled_flow_chunk action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAA/zXNMQqAMAyF4bt09gTORXBw6gmCTTUQmxKjDuLdLZSuH//jvS6xPB4NiN2YL+bByY2qFHGBUihvnVcphHFSObrscHowCKYIFRPwibUD5joLtcdetpNEmYwkz7H59wOUb/OmfgAAAA==</data>
+        <document_id display_value="Created 2025-01-10 20:10:20">79aba49d790392108ca81b15347e00bb</document_id>
+        <field>flow_config_param</field>
+        <length>152</length>
+        <position>0</position>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 04:10:20</sys_created_on>
+        <sys_id>7daba49d830392108672e480ceaad3bc</sys_id>
+    </sys_flow_compiled_flow_chunk>
+    <sys_flow_compiled_flow_chunk action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAA/91XW2+iQBT+L5N9NBYFQXxatSZr0otRd5PNZkOG4WAnCzMsA22N8b/vDCBewFa7NWn64ui5c77vHMYV8gP+NAogBJYI1Pu1QoKnMYGxh3qIwZNDOGNAEsqZE8PfFESCGoXNHQ7hdavvNItlEM0E0ul0dU232y2ta1ptMLoaAYw9HYzSvh9QLCtBMecqSIRjWdpsV8XSIGigZBmp7JP+tTOZ3g9Hs5kKQXgmdQmYmqsRmc3vVLJ1QJqGlI2ZSOI0K1vVqEkhfj4QGlIKcczjOY4XkGyyS8ORktZYxxDxOKFsMeaot0KURal0W60biKdJ+d0DH6dBcl+K1tugwwAwS6NjlVTVCrnfDUTF+NssgQj1fBwIkIIHsf25blTAFQleQB2e+4oCwpbVsrQWaOr0rfwktpudnbapVSAsIzknuNYAveHADtQ3/bvR/+LcrsNZN87BWVlfCueyknfG+Yv8jGunt05dYO7a2DUN29PMYmwN7OrEMzumB3Kk4TjmeTznhAB1yJ9FnR1+9Ifz8Y/x/OdFONJqn8MRZX0pjpSVvA9HBDDPgRDT4JAeNZqCGaYp9zmxNHV6hp6drsRJnXYbV7fBNpRzgu9HJEVLr2NFWz+HFcr6UqwoK3nvzSGRO743dpUFN/xi6P1WPvSGbcl3v236puWa8OLWUCQ5wf0j0qNtfPIXi7QQSykI+5lT1ncoXNU9cpbdGooHlPVRRvPcg+UeUqp8uk0+WN6CEJnrCl3xSMlwoHI80mSphF9JgIWCmPCwKRhpRl4z5B4EzZ0wzXEYpgl2A5hc9z3v/iDOztNK9KjqR7eB8EaraKt45Q05S+A5UYIVesRBqvhAmUypbrlK5VBFeCqm4KOejCnnBvlH/fwX/QTDkXjgNeliTmRXnG0bnY1tXRyWT2W1e5IUeXMneBlwXElTSA/jUbHpXym6KkoaYkYgeBMsuWsNEtbnQ2K/W2qqsZAPvB+7EL7U/WIzlwGnkF/U3tL/wrcGAPsAgNf+rsm/eZv74icBalo+0NsGhkkQ5M6+xVG5qxd8V1AFVQoXfIDJnznPXw7Zfhws8x832M3GrGKVKSordf0PgIbWf8wPAAA=</data>
+        <document_id display_value="Created 2025-01-10 20:10:20">79aba49d790392108ca81b15347e00bb</document_id>
+        <field>flow_structure</field>
+        <length>1112</length>
+        <position>0</position>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 04:10:20</sys_created_on>
+        <sys_id>f1aba49d830392108672e480ceaad3bc</sys_id>
+    </sys_flow_compiled_flow_chunk>
+    <sys_flow_compiled_flow_chunk action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAA/+VaXW+bMBT9L36OIjAfCXla11ZTtKmd0mx7mCZkzCVFJZAF026q+t9nE9KPhMR0wa5SnkiAy70+955rH9n3KE5ztiwoi7M0R6Of9+gDTUjOfyKazft5SvuLsD/PQkj6z17tj+fzgpEgga9nV4ws2fjpGeqhOEQjo4cI/38bs79j/hfZ1HCBOs7QMiwPm8bQHWCwhwYFQkILbD8X3+HGi/A0Sxn8YcLsHt2SpABuH6c8Ep+uHvncA3eTTyBCI+4YHnoo2mkX7bXLU7LIr7Mad8uMQp77IURxGouh+et3676TkrkwTOFOeEuhBMNfwu8CcvY4uji/XIgHJEGjiCQ5t/wPzM+AxiFciMFuAW++EvgjhrwdMK+usyIJTyrMJkW6jSnuoYQEwN2ggIJrBAblcEbOFpwO9OsLoLzNi2AG/cAjgWt7oeFWCbFJYNHQddwQeLLgsVZepFFmdcRpXBbpGv0v+lDmXpvzsRpQlGR3/Vtc1VPIsvqa+kFiNs1uoKaSrB7KFvzLk/NP46vp+YTfvlu//Rn+Nki0L973mTBAbQQ7JcsZ1PQRW2vNs3gOy1bGI8DfHo2jAGdJX5k8lfV2PK5WdFe13pV+spqJ0yJJDkp6T2R6kQCrKKInVWGWCuxZVtBrnX5Lh8KxIKJWxyXzy1ngY5LRmzidrTKpqDnv6ncDrYwUdaaw3Q31t7upKKDdDc/rTv/ROW1WrBXJO5mRONXJ3LKGNbPUNLTiW3ZjxUtC06zWhN8uVK4KD5GUuDvk1aYpTavNSnZdLvLpwBDX0LbKa2BCefUwMepFpczqiPOoRFRKUX4bUWnaUlUpjVyTqjQdrVWvWlaargKkD9GVZqvL2Ib13pWeskdYvibrSoSlNABFwlJOQUXCsiH3N4Rl2Y51r1mHWjmpWFqanv6WJ9GWeHOz6R33IJ2Tp0Jx2ayKNRMVm1rx1SEuMW4gLpXzd5+4xFZ3yKtvw7LV3ZuokvuRuZL7tjcA6nhu5A4CF3btWMqsjjiPSsSlFOW3EZfYkYpLaeSaxCVudVdNOirV4hIPFCB9iLjErS5kG9Z7V3rKHnH5mqwrEZfSABSJSzkFFYnLhtx/+11L7GmlpGJtaRn6O55EW1qb5+necQvSOXcq1JbNqlgzUa1WzxA2a8iqz7JZDbSlcv7u05aW3R3yatOW1rMtHOmp7mph0JUTyTXCUArRer3W2unw0+qDNalzN1JxxFA3LsFn+O4/o783Eb96iAdGioS3mUXBvou4eVLuHx7vXxbsxYOHf9vk35xeMQAA</data>
+        <document_id display_value="Created 2025-01-10 20:10:20">79aba49d790392108ca81b15347e00bb</document_id>
+        <field>instructions</field>
+        <length>1296</length>
+        <position>0</position>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 04:10:20</sys_created_on>
+        <sys_id>bdaba49d830392108672e480ceaad3bb</sys_id>
+    </sys_flow_compiled_flow_chunk>
+    <sys_flow_compiled_flow_chunk action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAA/6tWyswrLikqTS7JzM/zTAnJD0rNzS9L9U6tdEosSc5QsqqurQUAOtk80SQAAAA=</data>
+        <document_id display_value="Created 2025-01-10 20:10:20">79aba49d790392108ca81b15347e00bb</document_id>
+        <field>runtime_value_metadata</field>
+        <length>76</length>
+        <position>0</position>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 04:10:20</sys_created_on>
+        <sys_id>39aba49d830392108672e480ceaad3bc</sys_id>
+    </sys_flow_compiled_flow_chunk>
+    <sys_pd_trigger_instance action="delete_multiple" query="sys_id=8406ec55830392108672e480ceaad3eb^sys_idNOT IN8406ec55830392108672e480ceaad3eb"/>
+    <sys_pd_trigger_instance action="INSERT_OR_UPDATE">
+        <label/>
+        <name/>
+        <process_definition display_value="New Connection Request">4c06ec55830392108672e480ceaad3e4</process_definition>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:45:38</sys_created_on>
+        <sys_id>8406ec55830392108672e480ceaad3eb</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:45:38</sys_updated_on>
+        <trigger_definition/>
+        <trigger_inputs/>
+        <trigger_type display_value="Record Create">ab6951170f1200108c87f4f0ff767e4f</trigger_type>
+    </sys_pd_trigger_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=8406ec55830392108672e480ceaad3eb"/>
+    <sys_variable_value action="delete_multiple" query="document_key=8406ec55830392108672e480ceaad3eb"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_trigger_instance</document>
+        <document_key>8406ec55830392108672e480ceaad3eb</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:45:38</sys_created_on>
+        <sys_id>c406ec55830392108672e480ceaad3ee</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:45:38</sys_updated_on>
+        <value>x_558714_petrux_friends</value>
+        <variable display_value="Table">a8ae38d1ff2200108c8733af793bf15c</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_trigger_instance</document>
+        <document_key>8406ec55830392108672e480ceaad3eb</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 03:45:38</sys_created_on>
+        <sys_id>cc06ec55830392108672e480ceaad3ed</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 03:45:38</sys_updated_on>
+        <value>state=Requested</value>
+        <variable display_value="Condition">2a8a7851ff2200108c8733af793bf131</variable>
+    </sys_variable_value>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=8406ec55830392108672e480ceaad3eb^sys_idNOT IN79aba49d830392108672e480ceaad3b9"/>
+    <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <data>{"run_trigger":"org.mozilla.javascript.UniqueTag@59f0d382: NOT_FOUND"}</data>
+        <identifier>8406ec55830392108672e480ceaad3eb</identifier>
+        <runner>PDTriggerRunner</runner>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 04:10:20</sys_created_on>
+        <sys_id>79aba49d830392108672e480ceaad3b9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 04:10:20</sys_updated_on>
+        <trigger display_value="">f1aba49d830392108672e480ceaad3b9</trigger>
+    </sys_trigger_runner_mapping>
+    <sys_json_chunk action="delete_multiple" query="document_id=79aba49d830392108672e480ceaad3b9"/>
+    <sys_flow_record_trigger action="delete_multiple" query="sys_id=f1aba49d830392108672e480ceaad3b9^sys_idNOT INf1aba49d830392108672e480ceaad3b9"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_558714_petrux_friends">state=Requested<item display_value="Requested" endquery="false" field="state" goto="false" newquery="false" operator="=" or="false" value="Requested"/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>true</on_insert>
+        <on_update>false</on_update>
+        <run_flow_in>background</run_flow_in>
+        <run_on_extended>false</run_on_extended>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-11 04:10:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f1aba49d830392108672e480ceaad3b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-11 04:10:20</sys_updated_on>
+        <table>x_558714_petrux_friends</table>
+    </sys_flow_record_trigger>
+</record_update>

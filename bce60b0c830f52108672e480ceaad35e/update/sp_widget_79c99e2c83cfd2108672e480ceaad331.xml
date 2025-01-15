@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function() {
+    var c = this;
+    c.users = c.data.usersInSameGroups; // Dados dos usuários no mesmo grupo
+
+    // Enviar solicitação de amizade
+    c.addFriend = function(friendId) {
+        c.data.action = "friendRequest"; // Define a ação
+        c.data.friendId = friendId;     // Define o ID do amigo
+
+        c.server.update().then(function(response) {
+            c.data.action = undefined;
+            c.data.friendId = undefined;
+
+            // Mensagem de feedback para o usuário
+            if (response.message) {
+                alert(response.message); // Mostra a mensagem do servidor
+            }
+
+            // Após a solicitação de amizade, obter novamente os dados atualizados
+            c.server.get().then(function(newData) {
+                // Atualizar a lista de usuários com os dados mais recentes
+                c.users = c.data.usersInSameGroups;
+
+                // Encontrar o usuário adicionado e atualizar o campo 'is_friend'
+                c.users.forEach(function(user) {
+                    if (user.sys_id === friendId) {
+                        user.is_friend = true; // Atualiza o campo 'is_friend' para true
+                    }
+                });
+            });
+        });
+    };
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.card {
+    background-color: #fff;
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease; /* Transição suave */
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens no card */
+    padding: 1rem;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+.card-img-top,
+.user-photo {
+    width: 60px; /* Tamanho fixo para a imagem ou o círculo */
+    height: 60px; /* Tamanho fixo para a imagem ou o círculo */
+    border-radius: 50%; /* Torna a imagem e o círculo redondos */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem deformar */
+    margin-bottom: 10px;
+}
+
+.user-photo {
+    background-color: $primary; /* Cor de fundo laranja */
+    color: white; /* Cor do texto (inicial) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px; /* Tamanho da inicial */
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center; /* Centraliza o título */
+}
+
+.card-text {
+    font-size: 14px;
+    color: #555;
+    text-align: center; /* Centraliza o texto */
+}
+
+.card-body {
+    text-align: center; /* Garante que os textos dentro do card fiquem centralizados */
+}
+
+/* Ajuste para o tamanho do botão de envio de e-mail */
+.btn-primary {
+    margin-top: 10px;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>users_groups</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>users groups</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function () {
+    var userId = gs.getUserID();
+    var userGroups = [];
+    var userSet = new Set();
+
+    // Obter os grupos do usuário logado
+    var userGroupGr = new GlideRecord('sys_user_grmember');
+    userGroupGr.addQuery('user', userId);
+    userGroupGr.query();
+    while (userGroupGr.next()) {
+        userGroups.push(userGroupGr.group.toString());
+    }
+
+    // Obter usuários que fazem parte dos mesmos grupos
+    var usersInSameGroups = [];
+    if (userGroups.length > 0) {
+        var membersGr = new GlideRecord('sys_user_grmember');
+        membersGr.addQuery('group', 'IN', userGroups.join(','));
+        membersGr.query();
+        while (membersGr.next()) {
+            var memberUserId = membersGr.user.toString();
+
+            if (!userSet.has(memberUserId) && memberUserId !== userId) {
+                userSet.add(memberUserId);
+
+                // Verificar se já existe uma amizade entre os usuários
+                var isFriend = false;
+                var friendshipGr = new GlideRecord('x_558714_petrux_friends');
+                friendshipGr.addQuery('state', '!=', 'Rejected'); // Filtra estados relevantes, se necessário
+                friendshipGr.addQuery('user', userId)
+							  friendshipGr.addQuery('friend', memberUserId);
+
+                friendshipGr.query();
+                if (friendshipGr.hasNext()) {
+                    isFriend = true;
+                }
+
+                // Adicionar informações do usuário ao array
+                usersInSameGroups.push({
+                    user_photo: membersGr.user.avatar.toString(),
+                    sys_id: memberUserId,
+                    name: membersGr.user.getDisplayValue(),
+                    email: membersGr.user.email.toString(),
+                    is_friend: isFriend // Indica se já são amigos
+                });
+            }
+        }
+    }
+
+    // Criar apenas o registro vazio na tabela
+    if (input && input.action === 'friendRequest') {
+        var friendId = input.friendId; // ID do amigo para enviar a solicitação
+
+        // Verificar se a amizade já existe
+        var existingFriendship = new GlideRecord('x_558714_petrux_friends');
+        existingFriendship.addQuery('user', userId);
+        existingFriendship.addQuery('friend', friendId);
+        existingFriendship.query();
+
+        if (existingFriendship.hasNext()) {
+            // Amizade já existe
+            data.message = 'Amizade já existe.';
+        } else {
+            // Criar um novo registro de amizade
+            var newFriendship = new GlideRecord('x_558714_petrux_friends');
+            newFriendship.initialize();
+            newFriendship.user = userId;
+            newFriendship.friend = friendId;
+            newFriendship.state = 'Requested'; // Estado vazio
+            newFriendship.insert();
+
+            data.message = 'Registro de solicitação de amizade criado com sucesso.';
+        }
+    } else {
+        data.message = 'Ação inválida ou ausente.';
+    }
+
+    // Retornar usuários nos mesmos grupos
+    data.usersInSameGroups = usersInSameGroups;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-09 04:16:01</sys_created_on>
+        <sys_id>79c99e2c83cfd2108672e480ceaad331</sys_id>
+        <sys_mod_count>106</sys_mod_count>
+        <sys_name>users groups</sys_name>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_update_name>sp_widget_79c99e2c83cfd2108672e480ceaad331</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-09 23:31:28</sys_updated_on>
+        <template><![CDATA[<div ng-if="c.users.length > 0">
+    <h3>Coworkers from the same group</h3>
+    <div class="row">
+        <div class="col-12 col-sm-4 col-md-4" ng-repeat="user in c.users">
+            <div class="card mb-4">
+                <!-- Verifica se há foto do usuário, se não exibe um círculo laranja -->
+                <div class="user-photo" ng-if="!user.user_photo">
+                    <span class="user-initials">{{user.name.charAt(0)}}</span> <!-- Exibe a inicial do nome -->
+                </div>
+                <img class="card-img-top user-photo-img" ng-src="{{user.user_photo}}.iix" alt="Foto de {{user.name}}" ng-if="user.user_photo">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{user.name}}</h5>
+                    <!--<p class="card-text">{{user.email}}</p>-->
+                    <button 
+                        class="btn btn-primary"
+                        ng-if="!user.is_friend"
+                        ng-click="c.addFriend(user.sys_id)">
+                        Adicionar Amigo
+                    </button>
+                    <button 
+                        class="btn btn-primary"
+                        ng-if="user.is_friend"
+                        ng-click="c.addFriend(user.sys_id)">
+                        Remover Amigo
+                    </button>
+                  
+                  <div ng-if="c.message">
+  <p>{{ c.message }}</p>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-if="c.users.length === 0">
+    <p>Nenhum usuário encontrado nos mesmos grupos.</p>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

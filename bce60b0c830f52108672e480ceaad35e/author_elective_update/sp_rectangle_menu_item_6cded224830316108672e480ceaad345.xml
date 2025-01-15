@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_rectangle_menu_item">
+    <sp_rectangle_menu_item action="DELETE">
+        <active>true</active>
+        <color>default</color>
+        <condition/>
+        <display_1/>
+        <display_2/>
+        <display_date/>
+        <filter/>
+        <glyph>users</glyph>
+        <hint/>
+        <kb_article/>
+        <kb_category/>
+        <kb_topic/>
+        <label>GroupMates</label>
+        <order>100</order>
+        <record_script/>
+        <sc_cat_item/>
+        <sc_category/>
+        <short_description/>
+        <sp_page display_value="petrux_groups">fdc99e2c83cfd2108672e480ceaad334</sp_page>
+        <sp_rectangle_menu display_value="Petrux Header Menu">b0957014834792108672e480ceaad3f0</sp_rectangle_menu>
+        <sp_rectangle_menu_item/>
+        <sys_class_name>sp_rectangle_menu_item</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-09 04:40:16</sys_created_on>
+        <sys_id>6cded224830316108672e480ceaad345</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GroupMates</sys_name>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_update_name>sp_rectangle_menu_item_6cded224830316108672e480ceaad345</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-09 04:40:16</sys_updated_on>
+        <table/>
+        <type>page</type>
+        <url/>
+        <url_target/>
+    </sp_rectangle_menu_item>
+    <sys_translated_text action="DELETE" query="documentkey=6cded224830316108672e480ceaad345"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="PetruX">bce60b0c830f52108672e480ceaad35e</application>
+        <file_path/>
+        <instance_id>98fcf2caeb429a18cbdefceacad0cd4b</instance_id>
+        <instance_name>dev291428</instance_name>
+        <name>sp_rectangle_menu_item_6cded224830316108672e480ceaad345</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_rectangle_menu_item"><sp_rectangle_menu_item action="INSERT_OR_UPDATE"><active>true</active><color>default</color><condition/><display_1/><display_2/><display_date/><filter/><glyph>users</glyph><hint/><kb_article/><kb_category/><kb_topic/><label>GroupMates</label><order>100</order><record_script/><sc_cat_item/><sc_category/><short_description/><sp_page display_value="petrux_groups">fdc99e2c83cfd2108672e480ceaad334</sp_page><sp_rectangle_menu display_value="Petrux Header Menu">b0957014834792108672e480ceaad3f0</sp_rectangle_menu><sp_rectangle_menu_item/><sys_class_name>sp_rectangle_menu_item</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-01-09 04:40:16</sys_created_on><sys_id>6cded224830316108672e480ceaad345</sys_id><sys_mod_count>0</sys_mod_count><sys_name>GroupMates</sys_name><sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package><sys_policy/><sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope><sys_update_name>sp_rectangle_menu_item_6cded224830316108672e480ceaad345</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-01-09 04:40:16</sys_updated_on><table/><type>page</type><url/><url_target/></sp_rectangle_menu_item><sys_translated_text action="delete_multiple" query="documentkey=6cded224830316108672e480ceaad345"/></record_update>]]></payload>
+        <payload_hash>379537322</payload_hash>
+        <record_name>GroupMates</record_name>
+        <reverted_from/>
+        <source>7ce60b0c830f52108672e480ceaad362</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-09 04:40:16</sys_created_on>
+        <sys_id>b45f1224830316108672e480ceaad333</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194495cf40a0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-09 04:40:16</sys_updated_on>
+        <type>Menu Item</type>
+        <update_guid>b85f12240a031610b84c37358c5f7d32</update_guid>
+        <update_guid_history>b85f12240a031610b84c37358c5f7d32:379537322</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="GroupMates">4f6f1224830316108672e480ceaad3e0</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-09 04:40:42</sys_created_on>
+        <sys_db_object display_value="" name="sp_rectangle_menu_item">sp_rectangle_menu_item</sys_db_object>
+        <sys_id>750292eb5aa444b582079387b08c80f1</sys_id>
+        <sys_metadata>6cded224830316108672e480ceaad345</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GroupMates</sys_name>
+        <sys_package display_value="PetruX" source="x_558714_petrux">bce60b0c830f52108672e480ceaad35e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="PetruX">bce60b0c830f52108672e480ceaad35e</sys_scope>
+        <sys_scope_delete display_value="">38ed18ac66cb43c0ad4828f5fc6ba490</sys_scope_delete>
+        <sys_update_name>sp_rectangle_menu_item_6cded224830316108672e480ceaad345</sys_update_name>
+        <sys_update_version display_value="sp_rectangle_menu_item_6cded224830316108672e480ceaad345">b45f1224830316108672e480ceaad333</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-09 04:40:42</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
